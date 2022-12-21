@@ -30,7 +30,7 @@ void Gra::WykonajRuch() {
     else{
         kolor_zetonu = 2;
     }
-    std::cout << "Tura gracza "<< kolor_zetonu <<" - którą kolumnę wybierasz?";
+    std::cout << "Tura gracza "<< kolor_zetonu <<" - ktora kolumne wybierasz?";
     std::cin >> kolumna;
     WhereIsLegal(kolumna-1);
     if(legalny_ruch){
@@ -38,7 +38,7 @@ void Gra::WykonajRuch() {
         tury++;
     }
     else{
-        std::cout << "Ten ruch jest nielegalny, wybierz inną kolumnę." << std::endl;
+        std::cout << "Ten ruch jest nielegalny, wybierz inna kolumne." << std::endl;
         WykonajRuch();
     }
 }
