@@ -15,7 +15,12 @@ Gra::Gra(){
     }
 };
 
-Gra::~Gra() = default;
+Gra::~Gra(){
+    for(int i = 0; i < 7; i++){
+        delete Plansza[i];
+    }
+    delete[]Plansza;
+};
 
 void Gra::WhereIsLegal(int k) {
     int i=0;
