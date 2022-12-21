@@ -11,12 +11,14 @@ Gra::~Gra() = default;
 
 void Gra::WhereIsLegal(int k) {
     int i=0;
-    while(Plansza[k][i] != 0) i++;
-    if(i<6) {
-        legalny_ruch = true;
-        tu_wstaw = i;
+    if (k > 6 || k < 0) legalny_ruch = false;
+    else {
+        while (Plansza[k][i] != 0) i++;
+        if (i < 6) {
+            legalny_ruch = true;
+            tu_wstaw = i;
+        } else legalny_ruch = false;
     }
-    else legalny_ruch = false;
 }
 
 int Gra::Rezultat() {
