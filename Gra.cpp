@@ -5,7 +5,15 @@
 #include "Gra.h"
 
 
-Gra::Gra() = default;
+Gra::Gra(){
+    Plansza = new int*[7];
+    for(int i = 0; i < 7; i++){
+        Plansza[i] = new int[6];
+        for(int j = 0; j < 6; j++){
+            Plansza[i][j]=0;
+        }
+    }
+};
 
 Gra::~Gra() = default;
 
