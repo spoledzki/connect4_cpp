@@ -5,9 +5,22 @@
 #include "Gra.h"
 
 
-Gra::Gra() = default;
+Gra::Gra(){
+    Plansza = new int*[7];
+    for(int i = 0; i < 7; i++){
+        Plansza[i] = new int[6];
+        for(int j = 0; j < 6; j++){
+            Plansza[i][j]=0;
+        }
+    }
+};
 
-Gra::~Gra() = default;
+Gra::~Gra(){
+    for(int i = 0; i < 7; i++){
+        delete Plansza[i];
+    }
+    delete[]Plansza;
+};
 
 void Gra::WhereIsLegal(int k) {
     int i=0;
@@ -32,8 +45,8 @@ void Gra::WykonajRuch() {
     else{
         kolor_zetonu = 2;
     }
-    //wczytanie kolumny
-
+    std::cout << "Tura gracza "<< kolor_zetonu <<" - ktora kolumne wybierasz?";
+    std::cin >> kolumna;
     WhereIsLegal(kolumna-1);
     if(legalny_ruch){
         Plansza[kolumna-1][tu_wstaw] = kolor_zetonu;
@@ -54,5 +67,6 @@ void Gra::DrukujPlansze() {
     }
     std::cout << "=================" << std::endl;
 }
+
 
 

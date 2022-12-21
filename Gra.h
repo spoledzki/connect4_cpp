@@ -16,9 +16,9 @@ public:
     void DrukujPlansze();
     void WykonajRuch();
 
-
-    int *Plansza[7] = {K1, K2, K3, K4, K5, K6, K7};
+    //int *Plansza[7] = {K1, K2, K3, K4, K5, K6, K7};
 private:
+    int **Plansza;
     //int kolumny_gra = 7;
     //int wiersze_gra = 6;
     int kolor_zetonu = 0;
@@ -26,13 +26,13 @@ private:
     int tu_wstaw = 0;
     int tury = 1;
     int kolumna = 0;
-    int K1[6] = {0,0,0,0,0,0};
+    /*int K1[6] = {0,0,0,0,0,0};
     int K2[6] = {0,0,0,0,0,0};
     int K3[6] = {0,0,0,0,0,0};
     int K4[6] = {0,0,0,0,0,0};
     int K5[6] = {0,0,0,0,0,0};
     int K6[6] = {0,0,0,0,0,0};
-    int K7[6] = {0,0,0,0,0,0};
+    int K7[6] = {0,0,0,0,0,0};*/
 };
 
 
