@@ -61,8 +61,11 @@ void Gra::WykonajRuch() {
 void Gra::DrukujPlansze() {
     for(int j=5; j>=0 ; j--){
         std::cout << "| ";
-        for (int i = 0; i < 7; i++)
-            std::cout << Plansza[i][j] << " ";
+        for (int i = 0; i < 7; i++) {
+            if (Plansza[i][j] == 0) std::cout << " ";
+            else std::cout << Plansza[i][j];
+            std::cout << " ";
+        }
         std::cout << "|" << std::endl;
     }
     std::cout << "=================" << std::endl;
