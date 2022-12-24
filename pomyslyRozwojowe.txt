@@ -1,6 +1,6 @@
 Elementy wizualne:
     1. "postaram się zrobić interfejs taki że wlaź nie rozpozna że to jest wxwidgets xD" NAJWYŻSZY PRIORYTET XD
-    2. usunięcie tego paska okna na górze, dodanie przycisku wyjdź z gry, krótką instrukcję
+    2. usunięcie tego paska okna na górze, dodanie przycisku wyjdź z gry, krótką instrukcję --done
     3. Ikonka pliku exe
     
 Elementy rozgrywki:
