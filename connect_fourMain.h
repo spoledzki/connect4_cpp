@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      connect_fourMain.h
- * Purpose:   Defines Application Frame
- * Author:     ()
+ * Purpose:   Deklaracje funkcji projektu connect_four.cpp
+ * Author:    Igor Nowiński, Szymon Olędzki, Tymoteusz Romanowicz
  * Created:   2022-12-14
  * Copyright:  ()
  * License:
@@ -9,10 +9,11 @@
 
 #ifndef CONNECT_FOURMAIN_H
 #define CONNECT_FOURMAIN_H
+#undef _
+#define _(s) wxString::FromUTF8(s)
 
 //(*Headers(connect_fourDialog)
 #include <wx/bmpbuttn.h>
-#include <wx/button.h>
 #include <wx/dialog.h>
 #include <wx/sizer.h>
 #include <wx/statline.h>
@@ -46,6 +47,10 @@ class connect_fourDialog: public wxDialog
         void OnBitmapButton5Click(wxCommandEvent& event);
         void OnBitmapButton6Click(wxCommandEvent& event);
         void OnButton1Click(wxCommandEvent& event);
+        void OnButton3Click(wxCommandEvent& event);
+        void OnBitmapButton51Click(wxCommandEvent& event);
+        void OnBitmapButton50Click(wxCommandEvent& event);
+        void OnBitmapButton52Click(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(connect_fourDialog)
@@ -100,7 +105,9 @@ class connect_fourDialog: public wxDialog
         static const long ID_BITMAPBUTTON5;
         static const long ID_BITMAPBUTTON6;
         static const long ID_BITMAPBUTTON49;
-        static const long ID_BUTTON1;
+        static const long ID_BITMAPBUTTON52;
+        static const long ID_BITMAPBUTTON50;
+        static const long ID_BITMAPBUTTON51;
         //*)
 
         //(*Declarations(connect_fourDialog)
@@ -148,17 +155,20 @@ class connect_fourDialog: public wxDialog
         wxBitmapButton* BitmapButton48;
         wxBitmapButton* BitmapButton49;
         wxBitmapButton* BitmapButton4;
+        wxBitmapButton* BitmapButton50;
+        wxBitmapButton* BitmapButton51;
+        wxBitmapButton* BitmapButton52;
         wxBitmapButton* BitmapButton5;
         wxBitmapButton* BitmapButton6;
         wxBitmapButton* BitmapButton7;
         wxBitmapButton* BitmapButton8;
         wxBitmapButton* BitmapButton9;
         wxBoxSizer* BoxSizer1;
-        wxButton* Button1;
         wxStaticLine* StaticLine1;
         wxStaticText* StaticText1;
         //*)
-    wxBitmap rysunki[5];
+        bool licznik = true;
+    wxBitmap rysunki[10];
     wxBitmapButton *plansza1[6];
     wxBitmapButton *plansza2[6];
     wxBitmapButton *plansza3[6];

@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      connect_fourMain.cpp
- * Purpose:   Code for Application Frame
- * Author:     ()
+ * Purpose:   Realizacje funkcji projektu connect_four.cpp
+ * Author:    Igor Nowiński, Szymon Olędzki, Tymoteusz Romanowicz
  * Created:   2022-12-14
  * Copyright:  ()
  * License:
@@ -11,12 +11,12 @@
 #include <wx/msgdlg.h>
 #include "Gra.h"
 #include <ctime>
+#include <cstring>
 using namespace std;
 
 //(*InternalHeaders(connect_fourDialog)
 #include <wx/font.h>
 #include <wx/intl.h>
-#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 
@@ -98,7 +98,9 @@ const long connect_fourDialog::ID_BITMAPBUTTON4 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON5 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON6 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON49 = wxNewId();
-const long connect_fourDialog::ID_BUTTON1 = wxNewId();
+const long connect_fourDialog::ID_BITMAPBUTTON52 = wxNewId();
+const long connect_fourDialog::ID_BITMAPBUTTON50 = wxNewId();
+const long connect_fourDialog::ID_BITMAPBUTTON51 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(connect_fourDialog,wxDialog)
@@ -123,14 +125,12 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     wxFlexGridSizer* FlexGridSizer8;
     wxFlexGridSizer* FlexGridSizer9;
 
-    Create(parent, wxID_ANY, _("Connect 4"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
+    Create(parent, wxID_ANY, _("Connect 4"), wxDefaultPosition, wxDefaultSize, wxBORDER_DOUBLE|wxBORDER_NONE, _T("wxID_ANY"));
     SetBackgroundColour(wxColour(50,170,180));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     FlexGridSizer4 = new wxFlexGridSizer(0, 1, 0, 0);
-    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Connect 4"), wxDefaultPosition, wxSize(267,48), wxALIGN_CENTRE, _T("ID_STATICTEXT1"));
-    wxFont StaticText1Font = wxSystemSettings::GetFont(wxSYS_DEFAULT_GUI_FONT);
-    if ( !StaticText1Font.Ok() ) StaticText1Font = wxSystemSettings::GetFont(wxSYS_DEFAULT_GUI_FONT);
-    StaticText1Font.SetPointSize(20);
+    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Connect 4"), wxDefaultPosition, wxSize(267,33), wxALIGN_CENTRE, _T("ID_STATICTEXT1"));
+    wxFont StaticText1Font(20,wxFONTFAMILY_MODERN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Consolas"),wxFONTENCODING_DEFAULT);
     StaticText1->SetFont(StaticText1Font);
     FlexGridSizer4->Add(StaticText1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
     FlexGridSizer2 = new wxFlexGridSizer(0, 1, 0, 0);
@@ -261,14 +261,23 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer3->Add(BitmapButton49, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer2->Add(FlexGridSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer12 = new wxFlexGridSizer(0, 3, 0, 0);
-    Button1 = new wxButton(this, ID_BUTTON1, _("Restart"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-    FlexGridSizer12->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BitmapButton52 = new wxBitmapButton(this, ID_BITMAPBUTTON52, wxNullBitmap, wxDefaultPosition, wxSize(150,30), wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_BITMAPBUTTON52"));
+    FlexGridSizer12->Add(BitmapButton52, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BitmapButton50 = new wxBitmapButton(this, ID_BITMAPBUTTON50, wxNullBitmap, wxDefaultPosition, wxSize(150,30), wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_BITMAPBUTTON50"));
+    wxFont BitmapButton50Font(10,wxFONTFAMILY_MODERN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Consolas"),wxFONTENCODING_DEFAULT);
+    BitmapButton50->SetFont(BitmapButton50Font);
+    FlexGridSizer12->Add(BitmapButton50, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BitmapButton51 = new wxBitmapButton(this, ID_BITMAPBUTTON51, wxNullBitmap, wxDefaultPosition, wxSize(150,30), wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_BITMAPBUTTON51"));
+    wxFont BitmapButton51Font(10,wxFONTFAMILY_MODERN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Consolas"),wxFONTENCODING_DEFAULT);
+    BitmapButton51->SetFont(BitmapButton51Font);
+    FlexGridSizer12->Add(BitmapButton51, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer2->Add(FlexGridSizer12, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer4->Add(FlexGridSizer2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(FlexGridSizer4, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizer1);
     BoxSizer1->Fit(this);
     BoxSizer1->SetSizeHints(this);
+    Center();
 
     Connect(ID_BITMAPBUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton1Click);
     Connect(ID_BITMAPBUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton2Click);
@@ -277,7 +286,9 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     Connect(ID_BITMAPBUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton5Click);
     Connect(ID_BITMAPBUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton6Click);
     Connect(ID_BITMAPBUTTON49,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton49Click);
-    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnButton1Click);
+    Connect(ID_BITMAPBUTTON52,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton52Click);
+    Connect(ID_BITMAPBUTTON50,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnQuit);
+    Connect(ID_BITMAPBUTTON51,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton51Click);
     //*)
 
     //ustawienie tablic i rysunków
@@ -285,6 +296,10 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     rysunki[0]=wxBitmap(wxImage("blank.bmp"));
     rysunki[1]=wxBitmap(wxImage("circle.bmp"));
     rysunki[2]=wxBitmap(wxImage("circle2.bmp"));
+    rysunki[3]=wxBitmap(wxImage("blank_button.bmp"));
+    rysunki[4]=wxBitmap(wxImage("restart.bmp"));
+    rysunki[5]=wxBitmap(wxImage("exit.bmp"));
+    rysunki[6]=wxBitmap(wxImage("tutorial.bmp"));
     #define pw(nr, i) plansza1[i]=BitmapButton ##nr
     pw(7,0); pw(8,1); pw(9,2); pw(10,3); pw(11,4); pw(12,5);
     #undef pw
@@ -332,6 +347,12 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     }
 
 
+    BitmapButton50 -> SetBitmap(rysunki[5]);
+    BitmapButton51 -> SetBitmap(rysunki[6]);
+    BitmapButton52 -> SetBitmap(rysunki[4]);
+    BitmapButton52 -> SetLabel("Restart");
+    BitmapButton50 -> SetLabel(wxString("Wyjdź z gry"));
+    BitmapButton51 -> SetLabel(wxString("Instrukcja"));
 }
 }
 
@@ -413,4 +434,25 @@ void connect_fourDialog::OnBitmapButton49Click(wxCommandEvent& event){
 
 void connect_fourDialog::OnButton1Click(wxCommandEvent& event){
     czyszczenie_rysunkow();
+}
+
+void connect_fourDialog::OnQuit(wxCommandEvent& event){
+    Close();
+}
+
+void connect_fourDialog::OnButton3Click(wxCommandEvent& event)
+{
+}
+
+void connect_fourDialog::OnBitmapButton51Click(wxCommandEvent& event)
+{
+
+ wxString instrukcja = wxString("Pierwszy gracz wrzuca swój żeton do wybranej przez niego kolumny. Żeton zajmuje najniższą pozycję. Gracze wrzucają swoje żetony na przemian, aż jeden z nich ułoży cztery żetony w poziomie, pionie lub ukosie. Wygrywa ten gracz, który zrobi to jako pierwszy. Jeżeli natomiast plansza się zapełni, a nie utworzy się żadna czwórka, jest remis.");
+wxMessageBox(instrukcja,"Instrukcja");
+}
+
+
+void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event)
+{
+   czyszczenie_rysunkow();
 }

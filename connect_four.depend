@@ -1690,9 +1690,8 @@
 1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\theme.h
 	"wx/string.h"
 
-1671652463 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.h
+1671888108 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.h
 	<wx/bmpbuttn.h>
-	<wx/button.h>
 	<wx/dialog.h>
 	<wx/sizer.h>
 	<wx/statline.h>
@@ -1878,17 +1877,17 @@
 1671636121 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.h
 	<iostream>
 
-1671632558 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.cpp
+1671636121 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.cpp
 	"Gra.h"
 
-1671653270 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.cpp
+1671887216 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
 	<ctime>
+	<cstring>
 	<wx/font.h>
 	<wx/intl.h>
-	<wx/settings.h>
 	<wx/string.h>
 
 1667235511 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msgdlg.h
@@ -1954,4 +1953,325 @@
 1667235555 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\statline.h
 
 1667235531 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\statline.h
+
+1667235515 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
+
+1667235519 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1667235514 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1667235520 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/cocoa/notebook.h"
+	"wx/os2/notebook.h"
+
+1667235559 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\notebook.h
+	"wx/arrstr.h"
+
+1667235535 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\notebook.h
+	"wx/control.h"
+
+1667235531 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1667235542 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\notebook.h
+	"wx/list.h"
+
+1667235541 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\notebook.h
+	"wx/list.h"
+
+1667235526 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\notebook.h
+	"wx/event.h"
+
+1667235556 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\notebook.h
+	"wx/cocoa/NSTabView.h"
+
+1667235556 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\nstabview.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+	"wx/cocoa/ObjcRef.h"
+
+1667235552 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\notebook.h
+	"wx/control.h"
+
+1667235515 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\choice.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/choice.h"
+	"wx/msw/wince/choicece.h"
+	"wx/msw/choice.h"
+	"wx/motif/choice.h"
+	"wx/gtk/choice.h"
+	"wx/gtk1/choice.h"
+	"wx/osx/choice.h"
+	"wx/cocoa/choice.h"
+	"wx/os2/choice.h"
+
+1667235514 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\ctrlsub.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/control.h"
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
+
+1667235533 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\ctrlsub.h
+
+1667235548 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\ctrlsub.h
+	"wx/dynarray.h"
+	"wx/generic/ctrlsub.h"
+
+1667235530 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\ctrlsub.h
+	"wx/dynarray.h"
+
+1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\choice.h
+	"wx/combobox.h"
+
+1667235519 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\combobox.h
+	"wx/defs.h"
+	"wx/textctrl.h"
+	"wx/ctrlsub.h"
+	"wx/textentry.h"
+	"wx/univ/combobox.h"
+	"wx/msw/combobox.h"
+	"wx/motif/combobox.h"
+	"wx/gtk/combobox.h"
+	"wx/gtk1/combobox.h"
+	"wx/osx/combobox.h"
+	"wx/cocoa/combobox.h"
+	"wx/os2/combobox.h"
+
+1667235523 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\textctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/textentry.h"
+	"wx/dynarray.h"
+	"wx/gdicmn.h"
+	"wx/ioswrap.h"
+	"wx/x11/textctrl.h"
+	"wx/univ/textctrl.h"
+	"wx/msw/wince/textctrlce.h"
+	"wx/msw/textctrl.h"
+	"wx/motif/textctrl.h"
+	"wx/gtk/textctrl.h"
+	"wx/gtk1/textctrl.h"
+	"wx/osx/textctrl.h"
+	"wx/cocoa/textctrl.h"
+	"wx/os2/textctrl.h"
+
+1667235518 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\textentry.h
+	"wx/filefn.h"
+	"wx/gdicmn.h"
+	"wx/gtk/textentry.h"
+	"wx/osx/textentry.h"
+	"wx/msw/textentry.h"
+	"wx/motif/textentry.h"
+	"wx/os2/textentry.h"
+
+1667235542 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\textentry.h
+
+1667235525 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\textentry.h
+	"wx/control.h"
+
+1667235534 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\textentry.h
+
+1667235548 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\textentry.h
+
+1667235550 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\textentry.h
+
+1667235515 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\ioswrap.h
+	"wx/beforestd.h"
+	<iostream.h>
+	<iostream>
+	"wx/afterstd.h"
+	"wx/msw/winundef.h"
+
+1667235553 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\x11\textctrl.h
+	"wx/univ/textctrl.h"
+	"wx/scrolwin.h"
+	"wx/arrstr.h"
+
+1667235559 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\textctrl.h
+	"wx/scrolwin.h"
+	"wx/univ/inphand.h"
+
+1667235518 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\scrolwin.h
+	"wx/panel.h"
+	"wx/gtk/scrolwin.h"
+	"wx/gtk1/scrolwin.h"
+	"wx/generic/scrolwin.h"
+
+1667235542 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\scrolwin.h
+
+1667235540 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\scrolwin.h
+
+1667235532 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\scrolwin.h
+
+1667235538 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\wince\textctrlce.h
+	"wx/dynarray.h"
+
+1667235536 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\textctrl.h
+
+1667235549 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\textctrl.h
+
+1667235544 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\textctrl.h
+
+1667235541 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\textctrl.h
+
+1667235527 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\textctrl.h
+	"wx/control.h"
+	"wx/textctrl.h"
+
+1667235556 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\textctrl.h
+	"wx/cocoa/NSTextField.h"
+
+1667235552 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\textctrl.h
+
+1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\combobox.h
+	"wx/combo.h"
+
+1667235523 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\combo.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/renderer.h"
+	"wx/bitmap.h"
+	"wx/textentry.h"
+	"wx/msw/combo.h"
+	"wx/generic/combo.h"
+
+1667235514 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\renderer.h
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/bitmap.h"
+	"wx/string.h"
+
+1667235537 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\combo.h
+	"wx/timer.h"
+
+1667235531 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\combo.h
+	"wx/dcbuffer.h"
+
+1667235512 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\dcbuffer.h
+	"wx/dcmemory.h"
+	"wx/dcclient.h"
+	"wx/window.h"
+
+1667235515 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\dcmemory.h
+	"wx/dc.h"
+	"wx/bitmap.h"
+
+1667235535 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1667235549 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1667235544 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\combobox.h
+	"wx/choice.h"
+
+1667235540 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\combobox.h
+	"wx/defs.h"
+	"wx/object.h"
+
+1667235526 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\combobox.h
+	"wx/containr.h"
+	"wx/choice.h"
+	"wx/textctrl.h"
+
+1667235556 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\combobox.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+	"wx/textctrl.h"
+	"wx/dynarray.h"
+
+1667235551 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1667235538 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\wince\choicece.h
+	"wx/defs.h"
+	"wx/dynarray.h"
+
+1667235532 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\choice.h
+
+1667235548 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\choice.h
+	"wx/clntdata.h"
+	"wx/dynarray.h"
+
+1667235542 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\choice.h
+
+1667235540 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\choice.h
+
+1667235525 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\choice.h
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/arrstr.h"
+
+1667235554 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\choice.h
+	"wx/cocoa/NSMenu.h"
+
+1667235555 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\nsmenu.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+
+1667235550 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\choice.h
+
+1667235518 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\animate.h
+	"wx/defs.h"
+	"wx/animdecod.h"
+	"wx/control.h"
+	"wx/timer.h"
+	"wx/bitmap.h"
+	"wx/gtk/animate.h"
+	"wx/generic/animate.h"
+
+1667235516 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\animdecod.h
+	"wx/defs.h"
+	"wx/colour.h"
+	"wx/gdicmn.h"
+	"wx/log.h"
+	"wx/stream.h"
+
+1667235543 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\animate.h
+
+1667235530 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\animate.h
+	"wx/bitmap.h"
+
+1667235518 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\hyperlink.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/gtk/hyperlink.h"
+	"wx/msw/hyperlink.h"
+	"wx/generic/hyperlink.h"
+
+1667235544 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\hyperlink.h
+	"wx/generic/hyperlink.h"
+
+1667235531 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\hyperlink.h
+
+1667235535 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\hyperlink.h
+	"wx/generic/hyperlink.h"
 
