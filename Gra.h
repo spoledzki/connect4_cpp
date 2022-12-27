@@ -6,33 +6,38 @@
 #define CONNECT4_GRA_H
 
 #include <iostream>
+#include <regex>
+#include <string>
+#include <sstream>
 
 class Gra {
 public:
     Gra();
     ~Gra();
+    bool isColLegal(int k);
+    bool isRowLegal(int w);
     void WhereIsLegal(int k);
-    int Rezultat();
+    bool Rezultat();
     void DrukujPlansze();
     void WykonajRuch();
+    bool CheckCols();
+    bool CheckRows();
+    bool CheckDiags();
+    bool CheckDiagsLDRU();
+    bool CheckDiagsLURD();
+    int getToken() const;
 
-    //int *Plansza[7] = {K1, K2, K3, K4, K5, K6, K7};
 private:
     int **Plansza;
-    //int kolumny_gra = 7;
-    //int wiersze_gra = 6;
-    int kolor_zetonu = 0;
-    bool legalny_ruch = false;
-    int tu_wstaw = 0;
-    int tury = 1;
-    int kolumna = 0;
-    /*int K1[6] = {0,0,0,0,0,0};
-    int K2[6] = {0,0,0,0,0,0};
-    int K3[6] = {0,0,0,0,0,0};
-    int K4[6] = {0,0,0,0,0,0};
-    int K5[6] = {0,0,0,0,0,0};
-    int K6[6] = {0,0,0,0,0,0};
-    int K7[6] = {0,0,0,0,0,0};*/
+    int gameCols = 7;
+    int gameRows = 6;
+    int tokenColor = 0;
+    bool isMoveLegal = false;
+    int rowToInsert = 0;
+    int roundCount = 1;
+    int lastPickCol = 0;
+    bool isGameOver = false;
+    int winningToken = 0;
 };
 
 

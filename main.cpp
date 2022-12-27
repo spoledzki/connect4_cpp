@@ -10,6 +10,9 @@ int main() {
         g.WykonajRuch();
         licznik_ruchow++;
         g.DrukujPlansze();
+        std::cout<<"Sprawdzam wynik..."<<std::endl;
+        if(g.Rezultat()) break;
     }
+    std::cout << "Wygrywa gracz " << g.getToken() <<"!"<< std::endl;
     return 0;
 }
