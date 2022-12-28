@@ -152,12 +152,12 @@ bool Gra::CheckDiagsLDRU() {
     std::regex reg2("2222");
     int j;
     for(int i = -2; i<4; i++){
-        j = 0;
-        for(int k = -2; k<4; k++){
-            if(isColLegal(k)){
-                diag_check += std::to_string(Plansza[k][j]);
-                j++;
+        j = i;
+        for(int k = 0; k<6; k++){
+            if(isColLegal(j)){
+                diag_check += std::to_string(Plansza[j][k]);
             }
+            j++;
         }
         if(std::regex_search(diag_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
@@ -169,6 +169,7 @@ bool Gra::CheckDiagsLDRU() {
             winningToken = 2;
             return isGameOver = true;
         }
+        //std::cout << diag_check << std::endl;
         diag_check = "";
     }
     return isGameOver;
@@ -180,12 +181,12 @@ bool Gra::CheckDiagsLURD() {
     std::regex reg2("2222");
     int j;
     for(int i = -2; i<4; i++){
-        j = 5;
-        for(int k = -2; k<4; k++){
-            if(isColLegal(k) && isRowLegal(j)) {
-                diag_check += std::to_string(Plansza[k][j]);
-                j--;
+        j = i;
+        for(int k = 5; k>-1; k--){
+            if(isColLegal(j)) {
+                diag_check += std::to_string(Plansza[j][k]);
             }
+            j++;
         }
         if(std::regex_search(diag_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
@@ -197,6 +198,7 @@ bool Gra::CheckDiagsLURD() {
             winningToken = 2;
             return isGameOver = true;
         }
+        //std::cout << diag_check << std::endl;
         diag_check = "";
     }
     return isGameOver;
