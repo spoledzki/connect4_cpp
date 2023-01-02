@@ -377,63 +377,94 @@ void connect_fourDialog::czyszczenie_rysunkow(){
     for(int i =0;i<7;i++){
         cykl[i] = 5;
     }
+
 }
 
-
+Gra object;
 
 void connect_fourDialog::OnBitmapButton1Click(wxCommandEvent& event){
-if(cykl[0] >= 0){
-plansza1[cykl[0]] -> SetBitmap(rysunki[rand()%2+1]);
+
+object.setLastPickCol(1);
+object.WykonajRuch();
+if(object.gettokenColor() == 1) plansza1[cykl[0]] -> SetBitmap(rysunki[1]);
+    else plansza1[cykl[0]] -> SetBitmap(rysunki[2]);
 cykl[0]--;
+    if(object.Rezultat() == true) koniec_gry();
+
 }
-}
+
+
 
 
 
 void connect_fourDialog::OnBitmapButton2Click(wxCommandEvent& event){
-    if(cykl[1] >= 0){
-    plansza2[cykl[1]] -> SetBitmap(rysunki[rand()%2+1]);
+    object.setLastPickCol(2);
+    object.WykonajRuch();
+    if(object.gettokenColor() == 1) plansza2[cykl[1]] -> SetBitmap(rysunki[1]);
+    else plansza2[cykl[1]] -> SetBitmap(rysunki[2]);
     cykl[1]--;
+     if(object.Rezultat() == true) koniec_gry();
 }
-}
+
 
 void connect_fourDialog::OnBitmapButton3Click(wxCommandEvent& event){
-    if(cykl[2] >= 0){
-    plansza3[cykl[2]] -> SetBitmap(rysunki[rand()%2+1]);
+
+    object.setLastPickCol(3);
+    object.WykonajRuch();
+    if(object.gettokenColor() == 1) plansza3[cykl[2]] -> SetBitmap(rysunki[1]);
+    else plansza3[cykl[2]] -> SetBitmap(rysunki[2]);
     cykl[2]--;
+    if(object.Rezultat() == true) koniec_gry();
     }
-}
+
 
 void connect_fourDialog::OnBitmapButton4Click(wxCommandEvent& event){
-    if(cykl[3] >= 0){
-    plansza4[cykl[3]] -> SetBitmap(rysunki[rand()%2+1]);
+
+    object.setLastPickCol(4);
+    object.WykonajRuch();
+    if(object.gettokenColor() == 1) plansza4[cykl[3]] -> SetBitmap(rysunki[1]);
+    else plansza4[cykl[3]] -> SetBitmap(rysunki[2]);
     cykl[3]--;
+    if(object.Rezultat() == true) koniec_gry();
 }
-}
+
 
 void connect_fourDialog::OnBitmapButton5Click(wxCommandEvent& event){
-    if(cykl[4] >= 0){
-    plansza5[cykl[4]] -> SetBitmap(rysunki[rand()%2+1]);
+
+    object.setLastPickCol(5);
+    object.WykonajRuch();
+    if(object.gettokenColor() == 1) plansza5[cykl[4]] -> SetBitmap(rysunki[1]);
+    else plansza5[cykl[4]] -> SetBitmap(rysunki[2]);
     cykl[4]--;
-    }
+    if(object.Rezultat() == true) koniec_gry();
 }
+
 
 void connect_fourDialog::OnBitmapButton6Click(wxCommandEvent& event){
-    if(cykl[5] >= 0){
-    plansza6[cykl[5]] -> SetBitmap(rysunki[rand()%2+1]);
+
+    object.setLastPickCol(6);
+    object.WykonajRuch();
+    if(object.gettokenColor() == 1) plansza6[cykl[5]] -> SetBitmap(rysunki[1]);
+    else plansza6[cykl[5]] -> SetBitmap(rysunki[2]);
     cykl[5]--;
-}
+if(object.Rezultat() == true) koniec_gry();
 }
 
+
 void connect_fourDialog::OnBitmapButton49Click(wxCommandEvent& event){
-    if(cykl[6] >= 0){
-    plansza7[cykl[6]] -> SetBitmap(rysunki[rand()%2+1]);
+
+    object.setLastPickCol(7);
+    object.WykonajRuch();
+    if(object.gettokenColor() == 1) plansza7[cykl[6]] -> SetBitmap(rysunki[1]);
+    else plansza7[cykl[6]] -> SetBitmap(rysunki[2]);
     cykl[6]--;
+if(object.Rezultat() == true) koniec_gry();
 }
-}
+
 
 void connect_fourDialog::OnButton1Click(wxCommandEvent& event){
     czyszczenie_rysunkow();
+    object.ending();
 }
 
 void connect_fourDialog::OnQuit(wxCommandEvent& event){
@@ -455,4 +486,11 @@ wxMessageBox(instrukcja,"Instrukcja");
 void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event)
 {
    czyszczenie_rysunkow();
+}
+
+void connect_fourDialog::koniec_gry(){
+    if(object.getToken() == 1) wxMessageBox("Gracz 1 wygral");
+    else wxMessageBox("Gracz 2 wygral");
+czyszczenie_rysunkow();
+    object.ending();
 }

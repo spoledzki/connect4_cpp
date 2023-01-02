@@ -1690,7 +1690,7 @@
 1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\theme.h
 	"wx/string.h"
 
-1671888108 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.h
+1672673673 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.h
 	<wx/bmpbuttn.h>
 	<wx/dialog.h>
 	<wx/sizer.h>
@@ -1874,13 +1874,16 @@
 	<iostream>
 	"Gra.h"
 
-1671636121 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.h
+1672675099 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.h
 	<iostream>
+	<regex>
+	<string>
+	<sstream>
 
-1671636121 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.cpp
+1672675099 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\gra.cpp
 	"Gra.h"
 
-1671887216 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.cpp
+1672674490 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_four\connect_four\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"

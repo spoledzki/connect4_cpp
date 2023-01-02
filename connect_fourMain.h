@@ -27,6 +27,7 @@ class connect_fourDialog: public wxDialog
         connect_fourDialog(wxWindow* parent,wxWindowID id = -1);
         virtual ~connect_fourDialog();
         void czyszczenie_rysunkow();
+        void koniec_gry();
 
     private:
 
