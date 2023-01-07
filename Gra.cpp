@@ -28,15 +28,26 @@ bool Gra::isRowLegal(int w){
     return false;
 }
 
+bool Gra::isMoveLegal(){
+    return MoveLegal;
+}
+
 void Gra::WhereIsLegal(int k) {
     int i=0;
-    if (!isColLegal(k)) isMoveLegal = false;
+    if (!isColLegal(k)) {
+            MoveLegal = false;
+            //komunikat = "Ruch nielegalny!";
+    }
     else {
         while (Plansza[k][i] != 0) i++;
-        if (!isRowLegal(i)) isMoveLegal = false;
+        if (!isRowLegal(i)) {
+                MoveLegal = false;
+                //komunikat = "Ruch nielegalny!";
+        }
         else {
-            isMoveLegal = true;
+            MoveLegal = true;
             rowToInsert = i;
+            //komunikat = "Ruch legalny";
         }
     }
 }
@@ -56,7 +67,7 @@ void Gra::WykonajRuch() {
     //std::cout << "Tura gracza "<< tokenColor <<" - ktora kolumne wybierasz?";
     //std::cin >> lastPickCol;
     WhereIsLegal(lastPickCol-1);
-    if(isMoveLegal){
+    if(MoveLegal){
         Plansza[lastPickCol-1][rowToInsert] = tokenColor;
         roundCount++;
     }
@@ -209,6 +220,10 @@ void Gra::setLastPickCol(int kolumna){
 lastPickCol = kolumna;
 }
 
+std::string Gra::getKomunikat(){
+    return komunikat;
+}
+
 void Gra::ending(){
     for(int i = 0; i < 7; i++){
         delete Plansza[i];
@@ -224,7 +239,7 @@ void Gra::ending(){
     }
 
     tokenColor = 0;
-    isMoveLegal = false;
+    MoveLegal = false;
     rowToInsert = 0;
     roundCount = 1;
     lastPickCol = 0;

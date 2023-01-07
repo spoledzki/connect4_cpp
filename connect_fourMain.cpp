@@ -12,6 +12,8 @@
 #include "Gra.h"
 #include <ctime>
 #include <cstring>
+#undef _
+#define _(s) wxString::FromUTF8(s)
 using namespace std;
 
 //(*InternalHeaders(connect_fourDialog)
@@ -45,6 +47,8 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 
     return wxbuild;
 }
+
+wxString s2w(string s);
 
 //(*IdInit(connect_fourDialog)
 const long connect_fourDialog::ID_STATICTEXT1 = wxNewId();
@@ -384,83 +388,100 @@ Gra object;
 
 void connect_fourDialog::OnBitmapButton1Click(wxCommandEvent& event){
 
-object.setLastPickCol(1);
-object.WykonajRuch();
-if(object.gettokenColor() == 1) plansza1[cykl[0]] -> SetBitmap(rysunki[1]);
-    else plansza1[cykl[0]] -> SetBitmap(rysunki[2]);
-cykl[0]--;
-    if(object.Rezultat() == true) koniec_gry();
+    object.setLastPickCol(1);
+    if(cykl[0]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza1[cykl[0]] -> SetBitmap(rysunki[1]);
+        else plansza1[cykl[0]] -> SetBitmap(rysunki[2]);
+        cykl[0]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
 
 }
 
 
-
-
-
 void connect_fourDialog::OnBitmapButton2Click(wxCommandEvent& event){
     object.setLastPickCol(2);
-    object.WykonajRuch();
-    if(object.gettokenColor() == 1) plansza2[cykl[1]] -> SetBitmap(rysunki[1]);
-    else plansza2[cykl[1]] -> SetBitmap(rysunki[2]);
-    cykl[1]--;
-     if(object.Rezultat() == true) koniec_gry();
+    if(cykl[1]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza2[cykl[1]] -> SetBitmap(rysunki[1]);
+        else plansza2[cykl[1]] -> SetBitmap(rysunki[2]);
+        cykl[1]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
 }
 
 
 void connect_fourDialog::OnBitmapButton3Click(wxCommandEvent& event){
 
     object.setLastPickCol(3);
-    object.WykonajRuch();
-    if(object.gettokenColor() == 1) plansza3[cykl[2]] -> SetBitmap(rysunki[1]);
-    else plansza3[cykl[2]] -> SetBitmap(rysunki[2]);
-    cykl[2]--;
-    if(object.Rezultat() == true) koniec_gry();
+    if(cykl[2]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza3[cykl[2]] -> SetBitmap(rysunki[1]);
+        else plansza3[cykl[2]] -> SetBitmap(rysunki[2]);
+        cykl[2]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
     }
 
 
 void connect_fourDialog::OnBitmapButton4Click(wxCommandEvent& event){
 
     object.setLastPickCol(4);
-    object.WykonajRuch();
-    if(object.gettokenColor() == 1) plansza4[cykl[3]] -> SetBitmap(rysunki[1]);
-    else plansza4[cykl[3]] -> SetBitmap(rysunki[2]);
-    cykl[3]--;
-    if(object.Rezultat() == true) koniec_gry();
+    if(cykl[3]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza4[cykl[3]] -> SetBitmap(rysunki[1]);
+        else plansza4[cykl[3]] -> SetBitmap(rysunki[2]);
+        cykl[3]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
 }
 
 
 void connect_fourDialog::OnBitmapButton5Click(wxCommandEvent& event){
 
     object.setLastPickCol(5);
-    object.WykonajRuch();
-    if(object.gettokenColor() == 1) plansza5[cykl[4]] -> SetBitmap(rysunki[1]);
-    else plansza5[cykl[4]] -> SetBitmap(rysunki[2]);
-    cykl[4]--;
-    if(object.Rezultat() == true) koniec_gry();
+    if(cykl[4]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza5[cykl[4]] -> SetBitmap(rysunki[1]);
+        else plansza5[cykl[4]] -> SetBitmap(rysunki[2]);
+        cykl[4]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
 }
 
 
 void connect_fourDialog::OnBitmapButton6Click(wxCommandEvent& event){
 
     object.setLastPickCol(6);
-    object.WykonajRuch();
-    if(object.gettokenColor() == 1) plansza6[cykl[5]] -> SetBitmap(rysunki[1]);
-    else plansza6[cykl[5]] -> SetBitmap(rysunki[2]);
-    cykl[5]--;
-if(object.Rezultat() == true) koniec_gry();
+    if(cykl[5]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza6[cykl[5]] -> SetBitmap(rysunki[1]);
+        else plansza6[cykl[5]] -> SetBitmap(rysunki[2]);
+        cykl[5]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
 }
 
 
 void connect_fourDialog::OnBitmapButton49Click(wxCommandEvent& event){
 
     object.setLastPickCol(7);
-    object.WykonajRuch();
-    if(object.gettokenColor() == 1) plansza7[cykl[6]] -> SetBitmap(rysunki[1]);
-    else plansza7[cykl[6]] -> SetBitmap(rysunki[2]);
-    cykl[6]--;
-if(object.Rezultat() == true) koniec_gry();
+    if(cykl[6]>-1){
+        object.WykonajRuch();
+        if(object.gettokenColor() == 1) plansza7[cykl[6]] -> SetBitmap(rysunki[1]);
+        else plansza7[cykl[6]] -> SetBitmap(rysunki[2]);
+        cykl[6]--;
+    }
+    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    if(object.Rezultat()) koniec_gry();
 }
-
 
 void connect_fourDialog::OnButton1Click(wxCommandEvent& event){
     czyszczenie_rysunkow();
@@ -477,9 +498,8 @@ void connect_fourDialog::OnButton3Click(wxCommandEvent& event)
 
 void connect_fourDialog::OnBitmapButton51Click(wxCommandEvent& event)
 {
-
- wxString instrukcja = wxString("Pierwszy gracz wrzuca swój żeton do wybranej przez niego kolumny. Żeton zajmuje najniższą pozycję. Gracze wrzucają swoje żetony na przemian, aż jeden z nich ułoży cztery żetony w poziomie, pionie lub ukosie. Wygrywa ten gracz, który zrobi to jako pierwszy. Jeżeli natomiast plansza się zapełni, a nie utworzy się żadna czwórka, jest remis.");
-wxMessageBox(instrukcja,"Instrukcja");
+string instrukcja = "Pierwszy gracz wrzuca swój żeton do wybranej przez niego kolumny. Żeton zajmuje najniższą pozycję. Gracze wrzucają swoje żetony na przemian, aż jeden z nich ułoży cztery żetony w poziomie, pionie lub ukosie. Wygrywa ten gracz, który zrobi to jako pierwszy. Jeżeli natomiast plansza się zapełni, a nie utworzy się żadna czwórka, jest remis.";
+wxMessageBox(s2w(instrukcja),"Instrukcja");
 }
 
 
@@ -489,8 +509,14 @@ void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event)
 }
 
 void connect_fourDialog::koniec_gry(){
-    if(object.getToken() == 1) wxMessageBox("Gracz 1 wygral");
-    else wxMessageBox("Gracz 2 wygral");
-czyszczenie_rysunkow();
+    wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał"), s2w("Zwycięstwo!"));
+    //if(object.getToken() == 1) wxMessageBox("Gracz 1 wygral");
+    //else wxMessageBox("Gracz 2 wygral");
+    czyszczenie_rysunkow();
     object.ending();
+}
+
+//POLSKIE ZNAKI W OKNIE
+wxString s2w(string s){
+    return wxString(s.c_str(), wxConvUTF8);
 }

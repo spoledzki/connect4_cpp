@@ -12,6 +12,7 @@
 #undef _
 #define _(s) wxString::FromUTF8(s)
 
+#include <string>
 //(*Headers(connect_fourDialog)
 #include <wx/bmpbuttn.h>
 #include <wx/dialog.h>

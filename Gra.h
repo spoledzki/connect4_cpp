@@ -16,6 +16,7 @@ public:
     ~Gra();
     bool isColLegal(int k);
     bool isRowLegal(int w);
+    bool isMoveLegal();
     void WhereIsLegal(int k);
     bool Rezultat();
     //void DrukujPlansze();
@@ -29,13 +30,15 @@ public:
     int gettokenColor();
     void setLastPickCol(int kolumna);
     void ending();
+    std::string getKomunikat();
 
 private:
+    std::string komunikat;
     int **Plansza;
     int gameCols = 7;
     int gameRows = 6;
     int tokenColor = 0;
-    bool isMoveLegal = false;
+    bool MoveLegal = false;
     int rowToInsert = 0;
     int roundCount = 1;
     int lastPickCol = 0;
