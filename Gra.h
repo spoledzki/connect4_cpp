@@ -26,6 +26,8 @@ public:
     bool CheckDiagsLDRU();
     bool CheckDiagsLURD();
     int getToken() const;
+    void RuchAI();
+    bool CzyMoznaWstawic(int i, int j);
 
 private:
     int **Plansza;
@@ -38,6 +40,8 @@ private:
     int lastPickCol = 0;
     bool isGameOver = false;
     int winningToken = 0;
+    int PlayerColor = 1;
+    int AIColor = 2;
 };
 
 
