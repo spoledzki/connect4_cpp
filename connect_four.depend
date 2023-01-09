@@ -4279,13 +4279,12 @@
 1673087288 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.h
 	<wx/app.h>
 
-1673270467 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.h
+1673271610 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.h
 	<string>
 	<wx/bmpbuttn.h>
 	<wx/checkbox.h>
 	<wx/dialog.h>
 	<wx/sizer.h>
-	<wx/statline.h>
 	<wx/stattext.h>
 
 1673268937 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.cpp

@@ -18,7 +18,6 @@
 #include <wx/checkbox.h>
 #include <wx/dialog.h>
 #include <wx/sizer.h>
-#include <wx/statline.h>
 #include <wx/stattext.h>
 //*)
 
@@ -103,7 +102,6 @@ class connect_fourDialog: public wxDialog
         static const long ID_BITMAPBUTTON46;
         static const long ID_BITMAPBUTTON47;
         static const long ID_BITMAPBUTTON48;
-        static const long ID_STATICLINE1;
         static const long ID_BITMAPBUTTON1;
         static const long ID_BITMAPBUTTON2;
         static const long ID_BITMAPBUTTON3;
@@ -111,9 +109,9 @@ class connect_fourDialog: public wxDialog
         static const long ID_BITMAPBUTTON5;
         static const long ID_BITMAPBUTTON6;
         static const long ID_BITMAPBUTTON49;
+        static const long ID_BITMAPBUTTON51;
         static const long ID_BITMAPBUTTON52;
         static const long ID_BITMAPBUTTON50;
-        static const long ID_BITMAPBUTTON51;
         static const long ID_STATICTEXT2;
         static const long ID_BITMAPBUTTON53;
         static const long ID_CHECKBOX1;
@@ -182,7 +180,6 @@ class connect_fourDialog: public wxDialog
         wxBitmapButton* BitmapButton9;
         wxBoxSizer* BoxSizer1;
         wxCheckBox* CheckBox1;
-        wxStaticLine* StaticLine1;
         wxStaticText* StaticText1;
         wxStaticText* StaticText2;
         wxStaticText* StaticText3;
