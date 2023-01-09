@@ -16,9 +16,10 @@ public:
     ~Gra();
     bool isColLegal(int k);
     bool isRowLegal(int w);
+    bool isMoveLegal();
     void WhereIsLegal(int k);
     bool Rezultat();
-    void DrukujPlansze();
+    //void DrukujPlansze();
     void WykonajRuch();
     bool CheckCols();
     bool CheckRows();
@@ -26,18 +27,28 @@ public:
     bool CheckDiagsLDRU();
     bool CheckDiagsLURD();
     int getToken() const;
+    int gettokenColor();
+    int getroundCount();
+    void koniec_rund();
+    void setLastPickCol(int kolumna);
+    std::string rundy_graczy(int numer_gracza);
+    void ending();
+    std::string getKomunikat();
 
 private:
+    std::string komunikat;
     int **Plansza;
     int gameCols = 7;
     int gameRows = 6;
     int tokenColor = 0;
-    bool isMoveLegal = false;
+    bool MoveLegal = false;
     int rowToInsert = 0;
-    int roundCount = 1;
+    int roundCount;
     int lastPickCol = 0;
     bool isGameOver = false;
     int winningToken = 0;
+    int liczba_rund; //brak implementacji
+    int rundy[2];
 };
 
 

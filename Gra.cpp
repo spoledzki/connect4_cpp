@@ -3,9 +3,13 @@
 //
 
 #include "Gra.h"
-
-
+#include <iostream>
+#include <sstream>
+#include <cstring>
+#include <ctime>
+using namespace std;
 Gra::Gra(){
+    srand(time(NULL));
     Plansza = new int*[gameCols];
     for(int i = 0; i < gameCols; i++){
         Plansza[i] = new int[gameRows];
@@ -13,13 +17,14 @@ Gra::Gra(){
             Plansza[i][j]=0;
         }
     }
+    for(int i=0;i<2;i++){
+        rundy[i] = 0;
+    }
+
+    roundCount = rand() % 2 + 1;
 }
 
 Gra::~Gra(){
-    for(int i = 0; i < 7; i++){
-        delete Plansza[i];
-    }
-    delete[]Plansza;
 }
 
 bool Gra::isColLegal(int k){
@@ -32,15 +37,26 @@ bool Gra::isRowLegal(int w){
     return false;
 }
 
+bool Gra::isMoveLegal(){
+    return MoveLegal;
+}
+
 void Gra::WhereIsLegal(int k) {
     int i=0;
-    if (!isColLegal(k)) isMoveLegal = false;
+    if (!isColLegal(k)) {
+            MoveLegal = false;
+            //komunikat = "Ruch nielegalny!";
+    }
     else {
         while (Plansza[k][i] != 0) i++;
-        if (!isRowLegal(i)) isMoveLegal = false;
+        if (!isRowLegal(i)) {
+                MoveLegal = false;
+                //komunikat = "Ruch nielegalny!";
+        }
         else {
-            isMoveLegal = true;
+            MoveLegal = true;
             rowToInsert = i;
+            //komunikat = "Ruch legalny";
         }
     }
 }
@@ -57,20 +73,21 @@ void Gra::WykonajRuch() {
     else{
         tokenColor = 2;
     }
-    std::cout << "Tura gracza "<< tokenColor <<" - ktora kolumne wybierasz?";
-    std::cin >> lastPickCol;
+    //std::cout << "Tura gracza "<< tokenColor <<" - ktora kolumne wybierasz?";
+    //std::cin >> lastPickCol;
     WhereIsLegal(lastPickCol-1);
-    if(isMoveLegal){
+    if(MoveLegal){
         Plansza[lastPickCol-1][rowToInsert] = tokenColor;
         roundCount++;
     }
     else{
-        std::cout << "Ten ruch jest nielegalny, wybierz inna kolumne." << std::endl;
+        //std::cout << "Ten ruch jest nielegalny, wybierz inna kolumne." << std::endl;
         WykonajRuch();
     }
+
 }
 
-void Gra::DrukujPlansze() {
+/*void Gra::DrukujPlansze() {
     for(int j=5; j>=0 ; j--){
         std::cout << "| ";
         for (int i = 0; i < 7; i++) {
@@ -81,7 +98,7 @@ void Gra::DrukujPlansze() {
         std::cout << "|" << std::endl;
     }
     std::cout << "=================" << std::endl;
-}
+}*/
 
 bool Gra::CheckCols() {
     std::string kol_check;
@@ -97,11 +114,13 @@ bool Gra::CheckCols() {
             //komunikat = "Wygrywa gracz 1!";
             isGameOver = true;
             winningToken = 1;
+            rundy[0]++;
         }
         if(std::regex_search(kol_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             isGameOver = true;
             winningToken = 2;
+            rundy[1]++;
         }
         //std::cout << kol_check << std::endl;
         kol_check = "";
@@ -123,11 +142,13 @@ bool Gra::CheckRows() {
         if(std::regex_search(row_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
             winningToken = 1;
+            rundy[0]++;
             return isGameOver = true;
         }
         if(std::regex_search(row_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             winningToken = 2;
+            rundy[1]++;
             return isGameOver = true;
         }
         //std::cout << row_check << std::endl;
@@ -162,11 +183,13 @@ bool Gra::CheckDiagsLDRU() {
         if(std::regex_search(diag_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
             winningToken = 1;
+            rundy[0]++;
             return isGameOver = true;
         }
         if(std::regex_search(diag_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             winningToken = 2;
+            rundy[1]++;
             return isGameOver = true;
         }
         //std::cout << diag_check << std::endl;
@@ -191,11 +214,13 @@ bool Gra::CheckDiagsLURD() {
         if(std::regex_search(diag_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
             winningToken = 1;
+            rundy[0]++;
             return isGameOver = true;
         }
         if(std::regex_search(diag_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             winningToken = 2;
+            rundy[1]++;
             return isGameOver = true;
         }
         //std::cout << diag_check << std::endl;
@@ -204,3 +229,54 @@ bool Gra::CheckDiagsLURD() {
     return isGameOver;
 }
 
+int Gra::gettokenColor(){
+return tokenColor;
+}
+
+void Gra::setLastPickCol(int kolumna){
+lastPickCol = kolumna;
+}
+
+std::string Gra::getKomunikat(){
+    return komunikat;
+}
+
+void Gra::ending(){
+    for(int i = 0; i < 7; i++){
+        delete Plansza[i];
+    }
+    delete[]Plansza;
+
+    Plansza = new int*[gameCols];
+    for(int i = 0; i < gameCols; i++){
+        Plansza[i] = new int[gameRows];
+        for(int j = 0; j < gameRows; j++){
+            Plansza[i][j]=0;
+        }
+    }
+
+    tokenColor = 0;
+    MoveLegal = false;
+    rowToInsert = 0;
+    roundCount = rand() % 2 + 1;
+    lastPickCol = 0;
+    isGameOver = false;
+    winningToken = 0;
+}
+
+std::string Gra::rundy_graczy(int numer_gracza){
+    stringstream ss;
+    ss<<to_string(rundy[numer_gracza]);
+    string drukuj = ss.str();
+return drukuj;
+}
+
+int Gra::getroundCount(){
+return roundCount;
+}
+
+void Gra::koniec_rund(){
+for(int i=0;i<2;i++){
+        rundy[i] = 0;
+    }
+}
