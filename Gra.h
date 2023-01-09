@@ -28,7 +28,10 @@ public:
     bool CheckDiagsLURD();
     int getToken() const;
     int gettokenColor();
+    int getroundCount();
+    void koniec_rund();
     void setLastPickCol(int kolumna);
+    std::string rundy_graczy(int numer_gracza);
     void ending();
     std::string getKomunikat();
 
@@ -40,10 +43,12 @@ private:
     int tokenColor = 0;
     bool MoveLegal = false;
     int rowToInsert = 0;
-    int roundCount = 1;
+    int roundCount;
     int lastPickCol = 0;
     bool isGameOver = false;
     int winningToken = 0;
+    int liczba_rund; //brak implementacji
+    int rundy[2];
 };
 
 

@@ -3,9 +3,13 @@
 //
 
 #include "Gra.h"
-
-
+#include <iostream>
+#include <sstream>
+#include <cstring>
+#include <ctime>
+using namespace std;
 Gra::Gra(){
+    srand(time(NULL));
     Plansza = new int*[gameCols];
     for(int i = 0; i < gameCols; i++){
         Plansza[i] = new int[gameRows];
@@ -13,6 +17,11 @@ Gra::Gra(){
             Plansza[i][j]=0;
         }
     }
+    for(int i=0;i<2;i++){
+        rundy[i] = 0;
+    }
+
+    roundCount = rand() % 2 + 1;
 }
 
 Gra::~Gra(){
@@ -105,11 +114,13 @@ bool Gra::CheckCols() {
             //komunikat = "Wygrywa gracz 1!";
             isGameOver = true;
             winningToken = 1;
+            rundy[0]++;
         }
         if(std::regex_search(kol_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             isGameOver = true;
             winningToken = 2;
+            rundy[1]++;
         }
         //std::cout << kol_check << std::endl;
         kol_check = "";
@@ -131,11 +142,13 @@ bool Gra::CheckRows() {
         if(std::regex_search(row_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
             winningToken = 1;
+            rundy[0]++;
             return isGameOver = true;
         }
         if(std::regex_search(row_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             winningToken = 2;
+            rundy[1]++;
             return isGameOver = true;
         }
         //std::cout << row_check << std::endl;
@@ -170,11 +183,13 @@ bool Gra::CheckDiagsLDRU() {
         if(std::regex_search(diag_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
             winningToken = 1;
+            rundy[0]++;
             return isGameOver = true;
         }
         if(std::regex_search(diag_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             winningToken = 2;
+            rundy[1]++;
             return isGameOver = true;
         }
         //std::cout << diag_check << std::endl;
@@ -199,11 +214,13 @@ bool Gra::CheckDiagsLURD() {
         if(std::regex_search(diag_check, reg1)){
             //komunikat = "Wygrywa gracz 1!";
             winningToken = 1;
+            rundy[0]++;
             return isGameOver = true;
         }
         if(std::regex_search(diag_check, reg2)){
             //komunikat = "Wygrywa gracz 2!";
             winningToken = 2;
+            rundy[1]++;
             return isGameOver = true;
         }
         //std::cout << diag_check << std::endl;
@@ -241,8 +258,25 @@ void Gra::ending(){
     tokenColor = 0;
     MoveLegal = false;
     rowToInsert = 0;
-    roundCount = 1;
+    roundCount = rand() % 2 + 1;
     lastPickCol = 0;
     isGameOver = false;
     winningToken = 0;
+}
+
+std::string Gra::rundy_graczy(int numer_gracza){
+    stringstream ss;
+    ss<<to_string(rundy[numer_gracza]);
+    string drukuj = ss.str();
+return drukuj;
+}
+
+int Gra::getroundCount(){
+return roundCount;
+}
+
+void Gra::koniec_rund(){
+for(int i=0;i<2;i++){
+        rundy[i] = 0;
+    }
 }

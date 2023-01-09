@@ -4233,3 +4233,115 @@
 
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\rcdefs.h
 
+1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\connect_fourapp.cpp
+	"connect_fourApp.h"
+	"connect_fourMain.h"
+	<wx/image.h>
+
+1673087288 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\connect_fourapp.h
+	<wx/app.h>
+
+1673087288 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\connect_fourmain.h
+	<string>
+	<wx/bmpbuttn.h>
+	<wx/dialog.h>
+	<wx/sizer.h>
+	<wx/statline.h>
+	<wx/stattext.h>
+
+1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\connect_fourmain.cpp
+	"connect_fourMain.h"
+	<wx/msgdlg.h>
+	"Gra.h"
+	<ctime>
+	<cstring>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1673087288 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\gra.h
+	<iostream>
+	<regex>
+	<string>
+	<sstream>
+
+1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\gra.cpp
+	"Gra.h"
+
+1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\resource.rc
+	"wx/msw/wx.rc"
+
+1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.cpp
+	"connect_fourApp.h"
+	"connect_fourMain.h"
+	<wx/image.h>
+
+1673087288 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.h
+	<wx/app.h>
+
+1673270467 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.h
+	<string>
+	<wx/bmpbuttn.h>
+	<wx/checkbox.h>
+	<wx/dialog.h>
+	<wx/sizer.h>
+	<wx/statline.h>
+	<wx/stattext.h>
+
+1673268937 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.cpp
+	"Gra.h"
+	<iostream>
+	<sstream>
+	<cstring>
+	<ctime>
+
+1673270466 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.h
+	<iostream>
+	<regex>
+	<string>
+	<sstream>
+
+1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\resource.rc
+	"wx/msw/wx.rc"
+
+1673270481 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.cpp
+	"connect_fourMain.h"
+	<wx/msgdlg.h>
+	"Gra.h"
+	<ctime>
+	<cstring>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1667235514 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\checkbox.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/checkbox.h"
+	"wx/msw/checkbox.h"
+	"wx/motif/checkbox.h"
+	"wx/gtk/checkbox.h"
+	"wx/gtk1/checkbox.h"
+	"wx/osx/checkbox.h"
+	"wx/cocoa/checkbox.h"
+	"wx/os2/checkbox.h"
+
+1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\checkbox.h
+	"wx/button.h"
+
+1667235533 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\checkbox.h
+
+1667235547 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\checkbox.h
+
+1667235542 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\checkbox.h
+
+1667235540 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\checkbox.h
+
+1667235525 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\checkbox.h
+
+1667235555 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\checkbox.h
+	"wx/cocoa/NSButton.h"
+
+1667235550 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\checkbox.h
+	"wx/control.h"
+
