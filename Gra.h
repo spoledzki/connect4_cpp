@@ -43,7 +43,7 @@ private:
     int tokenColor = 0;
     bool MoveLegal = false;
     int rowToInsert = 0;
-    int roundCount;
+    int roundCount = 0;
     int lastPickCol = 0;
     bool isGameOver = false;
     int winningToken = 0;
