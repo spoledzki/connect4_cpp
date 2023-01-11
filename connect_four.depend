@@ -2278,12 +2278,12 @@
 1667235535 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\hyperlink.h
 	"wx/generic/hyperlink.h"
 
-1672822211 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourapp.cpp
+1673361472 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourapp.cpp
 	"connect_fourApp.h"
 	"connect_fourMain.h"
 	<wx/image.h>
 
-1672822211 c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourapp.h
+1673361472 c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourapp.h
 	<wx/app.h>
 
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\app.h
@@ -3969,12 +3969,12 @@
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\theme.h
 	"wx/string.h"
 
-1672926917 c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourmain.h
+1673361472 c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourmain.h
 	<string>
 	<wx/bmpbuttn.h>
+	<wx/checkbox.h>
 	<wx/dialog.h>
 	<wx/sizer.h>
-	<wx/statline.h>
 	<wx/stattext.h>
 
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\bmpbuttn.h
@@ -4160,12 +4160,13 @@
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\stattext.h
 	"wx/control.h"
 
-1673083786 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourmain.cpp
+1673362718 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
 	<ctime>
 	<cstring>
+	<windows.h>
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
@@ -4204,16 +4205,20 @@
 
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\msgdlg.h
 
-1672910834 c:\users\arito\onedrive\dokumenty\github\connect4_cpp\gra.h
+1673358463 c:\users\arito\onedrive\dokumenty\github\connect4_cpp\gra.h
 	<iostream>
 	<regex>
 	<string>
 	<sstream>
 
-1672911588 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\gra.cpp
+1673358735 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\gra.cpp
 	"Gra.h"
+	<iostream>
+	<sstream>
+	<cstring>
+	<ctime>
 
-1672822211 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\resource.rc
+1673361472 source:c:\users\arito\onedrive\dokumenty\github\connect4_cpp\resource.rc
 	"wx/msw/wx.rc"
 
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\wx.rc
@@ -4342,5 +4347,36 @@
 	"wx/cocoa/NSButton.h"
 
 1667235550 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\checkbox.h
+	"wx/control.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\checkbox.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/checkbox.h"
+	"wx/msw/checkbox.h"
+	"wx/motif/checkbox.h"
+	"wx/gtk/checkbox.h"
+	"wx/gtk1/checkbox.h"
+	"wx/osx/checkbox.h"
+	"wx/cocoa/checkbox.h"
+	"wx/os2/checkbox.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\checkbox.h
+	"wx/button.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\checkbox.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\checkbox.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\checkbox.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\checkbox.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\checkbox.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\checkbox.h
+	"wx/cocoa/NSButton.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\checkbox.h
 	"wx/control.h"
 

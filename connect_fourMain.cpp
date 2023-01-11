@@ -12,6 +12,7 @@
 #include "Gra.h"
 #include <ctime>
 #include <cstring>
+#include <windows.h>
 #undef _
 #define _(s) wxString::FromUTF8(s)
 using namespace std;
@@ -420,7 +421,7 @@ connect_fourDialog::~connect_fourDialog()
     //*)
 }
 
-
+int licznik_ruchów=0;
 
 void connect_fourDialog::czyszczenie_rysunkow(){
     for(int i =0;i<6;i++){
@@ -451,8 +452,8 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza1[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    }
-    break;
+        }
+        break;
     case 2:
         if(object.gettokenColor() == 1) {
         plansza2[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
@@ -460,8 +461,8 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza2[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    }
-    break;
+        }
+        break;
     case 3:
         if(object.gettokenColor() == 1) {
         plansza3[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
@@ -469,7 +470,8 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza3[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    } break;
+        }
+        break;
     case 4:
         if(object.gettokenColor() == 1) {
         plansza4[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
@@ -477,7 +479,8 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza4[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    } break;
+        }
+        break;
     case 5:
         if(object.gettokenColor() == 1) {
         plansza5[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
@@ -485,7 +488,8 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza5[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    } break;
+        }
+        break;
     case 6:
         if(object.gettokenColor() == 1) {
         plansza6[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
@@ -493,7 +497,8 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza6[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    } break;
+        }
+        break;
     case 7:
         if(object.gettokenColor() == 1) {
         plansza7[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
@@ -501,14 +506,16 @@ void connect_fourDialog::przycisk(int kolumna){
         } else {
             plansza7[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
             BitmapButton53 -> SetBitmap(rysunki[1]);
-    } break;
+        }
+        break;
     default:
         break;
     }
     cykl[kolumna-1]--;
+    licznik_ruchów++;
     }
     else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
-    if(object.Rezultat()) koniec_gry();
+    if(object.Rezultat() || licznik_ruchów==42) koniec_gry();
 }
 
 
@@ -568,6 +575,7 @@ void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event)
    StaticText3 -> SetLabel("0");
    StaticText5 -> SetLabel("0");
    object.koniec_rund();
+   licznik_ruchów = 0;
 }
 
 void connect_fourDialog::koniec_gry(){
@@ -576,6 +584,7 @@ void connect_fourDialog::koniec_gry(){
     else StaticText5 -> SetLabel(object.rundy_graczy(1));
     czyszczenie_rysunkow();
     object.ending();
+    licznik_ruchów = 0;
 }
 
 //POLSKIE ZNAKI W OKNIE
