@@ -108,6 +108,8 @@ const long connect_fourDialog::ID_BITMAPBUTTON50 = wxNewId();
 const long connect_fourDialog::ID_STATICTEXT2 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON53 = wxNewId();
 const long connect_fourDialog::ID_CHECKBOX1 = wxNewId();
+const long connect_fourDialog::ID_STATICTEXT6 = wxNewId();
+const long connect_fourDialog::ID_CHOICE1 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON54 = wxNewId();
 const long connect_fourDialog::ID_STATICTEXT3 = wxNewId();
 const long connect_fourDialog::ID_STATICTEXT4 = wxNewId();
@@ -132,6 +134,7 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     wxFlexGridSizer* FlexGridSizer15;
     wxFlexGridSizer* FlexGridSizer16;
     wxFlexGridSizer* FlexGridSizer17;
+    wxFlexGridSizer* FlexGridSizer18;
     wxFlexGridSizer* FlexGridSizer1;
     wxFlexGridSizer* FlexGridSizer2;
     wxFlexGridSizer* FlexGridSizer3;
@@ -299,8 +302,19 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer15->Add(BitmapButton53, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer14->Add(FlexGridSizer15, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     CheckBox1 = new wxCheckBox(this, ID_CHECKBOX1, _("Rundy"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
-    CheckBox1->SetValue(true);
+    CheckBox1->SetValue(false);
     FlexGridSizer14->Add(CheckBox1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer19 = new wxFlexGridSizer(0, 1, 0, 0);
+    FlexGridSizer18 = new wxFlexGridSizer(0, 2, 0, 0);
+    StaticText6 = new wxStaticText(this, ID_STATICTEXT6, _("Liczba rund: "), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+    FlexGridSizer18->Add(StaticText6, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Choice1 = new wxChoice(this, ID_CHOICE1, wxDefaultPosition, wxDefaultSize, 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
+    Choice1->SetSelection( Choice1->Append(_("1")) );
+    Choice1->Append(_("3"));
+    Choice1->Append(_("5"));
+    Choice1->Append(_("7"));
+    FlexGridSizer18->Add(Choice1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer19->Add(FlexGridSizer18, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer16 = new wxFlexGridSizer(0, 5, 0, 0);
     BitmapButton54 = new wxBitmapButton(this, ID_BITMAPBUTTON54, wxNullBitmap, wxDefaultPosition, wxSize(50,50), wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON54"));
     FlexGridSizer16->Add(BitmapButton54, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
@@ -312,8 +326,9 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer16->Add(StaticText5, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BitmapButton55 = new wxBitmapButton(this, ID_BITMAPBUTTON55, wxNullBitmap, wxDefaultPosition, wxSize(50,50), wxBU_AUTODRAW, wxDefaultValidator, _T("ID_BITMAPBUTTON55"));
     FlexGridSizer16->Add(BitmapButton55, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    FlexGridSizer14->Add(FlexGridSizer16, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    FlexGridSizer17->Add(FlexGridSizer14, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer19->Add(FlexGridSizer16, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer14->Add(FlexGridSizer19, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    FlexGridSizer17->Add(FlexGridSizer14, 1, wxALL|wxEXPAND, 5);
     FlexGridSizer13->Add(FlexGridSizer17, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(FlexGridSizer13, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizer1);
@@ -332,6 +347,7 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     Connect(ID_BITMAPBUTTON52,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton52Click);
     Connect(ID_BITMAPBUTTON50,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnQuit);
     Connect(ID_CHECKBOX1,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnCheckBox1Click);
+    Connect(ID_CHOICE1,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&connect_fourDialog::OnChoice1Select);
     //*)
 
     //ustawienie tablic i rysunków
@@ -404,6 +420,8 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
         StaticText3 -> Hide();
         StaticText4 -> Hide();
         StaticText5 -> Hide();
+        StaticText6 -> Hide();
+        Choice1 -> Hide();
     }
     if(CheckBox1 -> IsChecked()){
         BitmapButton54 -> Show();
@@ -411,6 +429,8 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
         StaticText3 -> Show();
         StaticText4 -> Show();
         StaticText5 -> Show();
+        StaticText6 -> Show();
+        Choice1 -> Show();
     }
 }
 }
@@ -420,8 +440,6 @@ connect_fourDialog::~connect_fourDialog()
     //(*Destroy(connect_fourDialog)
     //*)
 }
-
-int licznik_ruchów=0;
 
 void connect_fourDialog::czyszczenie_rysunkow(){
     for(int i =0;i<6;i++){
@@ -444,6 +462,8 @@ void connect_fourDialog::przycisk(int kolumna){
     if(cykl[kolumna-1]>-1){
     object.setLastPickCol(kolumna);
     object.WykonajRuch();
+    Choice1 -> Disable();
+
     switch(kolumna) {
         case 1:
         if(object.gettokenColor() == 1) {
@@ -512,10 +532,15 @@ void connect_fourDialog::przycisk(int kolumna){
         break;
     }
     cykl[kolumna-1]--;
-    licznik_ruchów++;
+    licznik_ruchow++;
     }
     else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
-    if(object.Rezultat() || licznik_ruchów==42) koniec_gry();
+    if(object.Rezultat() || licznik_ruchow == 42) {
+            koniec_gry();
+            koniec_meczu(stoi(object.rundy_graczy(0)), stoi(object.rundy_graczy(1)));
+            object.ending();
+            BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
+            }
 }
 
 
@@ -560,14 +585,14 @@ void connect_fourDialog::OnQuit(wxCommandEvent& event){
 
 
 
-void connect_fourDialog::OnBitmapButton51Click(wxCommandEvent& event)
+void connect_fourDialog::OnBitmapButton51Click(wxCommandEvent& event)//instrukcja
 {
 string instrukcja = "Pierwszy gracz wrzuca swój żeton do wybranej przez niego kolumny. Żeton zajmuje najniższą pozycję. Gracze wrzucają swoje żetony na przemian, aż jeden z nich ułoży cztery żetony w poziomie, pionie lub ukosie. Wygrywa ten gracz, który zrobi to jako pierwszy. Jeżeli natomiast plansza się zapełni, a nie utworzy się żadna czwórka, jest remis.";
 wxMessageBox(s2w(instrukcja),"Instrukcja");
 }
 
 
-void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event)
+void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event) //restart
 {
    czyszczenie_rysunkow();
    object.ending();
@@ -575,36 +600,70 @@ void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event)
    StaticText3 -> SetLabel("0");
    StaticText5 -> SetLabel("0");
    object.koniec_rund();
-   licznik_ruchów = 0;
+   Choice1 -> Enable();
 }
 
 void connect_fourDialog::koniec_gry(){
-    wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał"), s2w("Zwycięstwo!"));
+    if(licznik_ruchow==42) wxMessageBox(s2w("Wszystkie miejsca na planszy zostały zajęte, nikt nie wygrał."), s2w("Remis!"));
+    else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał"), s2w("Zwycięstwo!"));
     if(object.getToken() == 1) StaticText3 -> SetLabel(object.rundy_graczy(0));
-    else StaticText5 -> SetLabel(object.rundy_graczy(1));
+        else StaticText5 -> SetLabel(object.rundy_graczy(1));
+    licznik_rund++;
     czyszczenie_rysunkow();
-    object.ending();
-    licznik_ruchów = 0;
+    licznik_ruchow = 0;
 }
+
+void connect_fourDialog::koniec_meczu(int gracz_1, int gracz_2){
+    if(liczba_rund==1 &&(gracz_1==1 || gracz_2==1)){
+        StaticText3 -> SetLabel("0");
+        StaticText5 -> SetLabel("0");
+        object.koniec_rund();
+        Choice1 -> Enable();
+    } else if((liczba_rund == 3 && (gracz_1==2 || gracz_2==2)) || (liczba_rund==5 && (gracz_1==3 || gracz_2==3)) || (liczba_rund==7 && (gracz_1==4 || gracz_2==4))) {
+            wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał większość rund."), s2w("Koniec gry!"));
+            StaticText3 -> SetLabel("0");
+            StaticText5 -> SetLabel("0");
+            object.koniec_rund();
+            Choice1 -> Enable();
+    }
+}
+
 
 //POLSKIE ZNAKI W OKNIE
 wxString s2w(string s){
     return wxString(s.c_str(), wxConvUTF8);
 }
 
-void connect_fourDialog::OnCheckBox1Click(wxCommandEvent& event)
+void connect_fourDialog::OnCheckBox1Click(wxCommandEvent& event) //checkbox od rund
 {
 if(!CheckBox1 -> IsChecked()){
         BitmapButton54 -> Hide();
         BitmapButton55 -> Hide();
+        Choice1 -> Hide();
         StaticText3 -> Hide();
         StaticText4 -> Hide();
         StaticText5 -> Hide();
+        StaticText6 -> Hide();
     } else {
         BitmapButton54 -> Show();
         BitmapButton55 -> Show();
+        Choice1 -> Show();
         StaticText3 -> Show();
         StaticText4 -> Show();
         StaticText5 -> Show();
+        StaticText6 -> Show();
+        BoxSizer1 -> Fit(this);
     }
+}
+
+void connect_fourDialog::SetLiczbaRund(int rundy){
+    liczba_rund = rundy;
+}
+
+
+void connect_fourDialog::OnChoice1Select(wxCommandEvent& event) //wybór liczby rund
+{
+    if(Choice1 ->GetSelection()==0) SetLiczbaRund(1);
+        else if(Choice1 ->GetSelection()==1) SetLiczbaRund(3);
+                else SetLiczbaRund(5);
 }

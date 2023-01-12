@@ -16,6 +16,7 @@
 //(*Headers(connect_fourDialog)
 #include <wx/bmpbuttn.h>
 #include <wx/checkbox.h>
+#include <wx/choice.h>
 #include <wx/dialog.h>
 #include <wx/sizer.h>
 #include <wx/stattext.h>
@@ -30,6 +31,8 @@ class connect_fourDialog: public wxDialog
         void czyszczenie_rysunkow();
         void koniec_gry();
         void przycisk(int kolumna);
+        void SetLiczbaRund(int rundy);
+        void koniec_meczu(int gracz_1, int gracz_2);
 
     private:
 
@@ -56,6 +59,7 @@ class connect_fourDialog: public wxDialog
         void OnBitmapButton52Click(wxCommandEvent& event);
         void OnBitmapButton53Click(wxCommandEvent& event);
         void OnCheckBox1Click(wxCommandEvent& event);
+        void OnChoice1Select(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(connect_fourDialog)
@@ -115,6 +119,8 @@ class connect_fourDialog: public wxDialog
         static const long ID_STATICTEXT2;
         static const long ID_BITMAPBUTTON53;
         static const long ID_CHECKBOX1;
+        static const long ID_STATICTEXT6;
+        static const long ID_CHOICE1;
         static const long ID_BITMAPBUTTON54;
         static const long ID_STATICTEXT3;
         static const long ID_STATICTEXT4;
@@ -180,11 +186,14 @@ class connect_fourDialog: public wxDialog
         wxBitmapButton* BitmapButton9;
         wxBoxSizer* BoxSizer1;
         wxCheckBox* CheckBox1;
+        wxChoice* Choice1;
+        wxFlexGridSizer* FlexGridSizer19;
         wxStaticText* StaticText1;
         wxStaticText* StaticText2;
         wxStaticText* StaticText3;
         wxStaticText* StaticText4;
         wxStaticText* StaticText5;
+        wxStaticText* StaticText6;
         //*)
         bool licznik = true;
     wxBitmap rysunki[10];
@@ -196,6 +205,9 @@ class connect_fourDialog: public wxDialog
     wxBitmapButton *plansza6[6];
     wxBitmapButton *plansza7[6];
     int cykl[7] = {5,5,5,5,5,5,5};
+    int licznik_ruchow=0;
+    int liczba_rund;
+    int licznik_rund;
         DECLARE_EVENT_TABLE()
 };
 

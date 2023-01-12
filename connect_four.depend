@@ -4276,44 +4276,46 @@
 1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect4_cpp-implementacja-cb\resource.rc
 	"wx/msw/wx.rc"
 
-1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.cpp
+1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.cpp
 	"connect_fourApp.h"
 	"connect_fourMain.h"
 	<wx/image.h>
 
-1673087288 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.h
+1673446941 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourapp.h
 	<wx/app.h>
 
-1673271610 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.h
+1673520060 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.h
 	<string>
 	<wx/bmpbuttn.h>
 	<wx/checkbox.h>
+	<wx/choice.h>
 	<wx/dialog.h>
 	<wx/sizer.h>
 	<wx/stattext.h>
 
-1673268937 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.cpp
+1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.cpp
 	"Gra.h"
 	<iostream>
 	<sstream>
 	<cstring>
 	<ctime>
 
-1673270466 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.h
+1673449272 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\gra.h
 	<iostream>
 	<regex>
 	<string>
 	<sstream>
 
-1673087288 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\resource.rc
+1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\resource.rc
 	"wx/msw/wx.rc"
 
-1673270481 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.cpp
+1673520086 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\connect_4\connect_four\connect_four\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
 	<ctime>
 	<cstring>
+	<windows.h>
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
