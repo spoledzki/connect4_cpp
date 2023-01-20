@@ -4382,3 +4382,80 @@
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\checkbox.h
 	"wx/control.h"
 
+1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourapp.cpp
+	"connect_fourApp.h"
+	"connect_fourMain.h"
+	<wx/image.h>
+
+1673446941 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourapp.h
+	<wx/app.h>
+
+1674233107 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.h
+	<string>
+	<wx/bmpbuttn.h>
+	<wx/checkbox.h>
+	<wx/choice.h>
+	<wx/dialog.h>
+	<wx/radiobut.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+
+1667235522 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\radiobut.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/radiobut.h"
+	"wx/msw/radiobut.h"
+	"wx/motif/radiobut.h"
+	"wx/gtk/radiobut.h"
+	"wx/gtk1/radiobut.h"
+	"wx/osx/radiobut.h"
+	"wx/cocoa/radiobut.h"
+	"wx/os2/radiobut.h"
+
+1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\radiobut.h
+	"wx/checkbox.h"
+
+1667235537 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\radiobut.h
+
+1667235549 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\radiobut.h
+
+1667235544 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\radiobut.h
+
+1667235540 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\radiobut.h
+
+1667235527 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\radiobut.h
+
+1667235556 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\radiobut.h
+	"wx/cocoa/NSButton.h"
+
+1667235552 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\radiobut.h
+	"wx/control.h"
+
+1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\resource.rc
+	"wx/msw/wx.rc"
+
+1674233163 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
+	"connect_fourMain.h"
+	<wx/msgdlg.h>
+	"Gra.h"
+	<ctime>
+	<cstring>
+	<windows.h>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1674229544 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\gra.h
+	<iostream>
+	<regex>
+	<string>
+	<sstream>
+
+1674232021 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\gra.cpp
+	"Gra.h"
+	<iostream>
+	<sstream>
+	<cstring>
+	<ctime>
+	<cstdlib>
+

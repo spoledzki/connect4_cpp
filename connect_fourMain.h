@@ -18,6 +18,7 @@
 #include <wx/checkbox.h>
 #include <wx/choice.h>
 #include <wx/dialog.h>
+#include <wx/radiobut.h>
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 //*)
@@ -31,8 +32,11 @@ class connect_fourDialog: public wxDialog
         void czyszczenie_rysunkow();
         void koniec_gry();
         void przycisk(int kolumna);
+        void przycisk_AI(int kolumna);
         void SetLiczbaRund(int rundy);
         void koniec_meczu(int gracz_1, int gracz_2);
+        void update();
+        void debugging();
 
     private:
 
@@ -60,6 +64,8 @@ class connect_fourDialog: public wxDialog
         void OnBitmapButton53Click(wxCommandEvent& event);
         void OnCheckBox1Click(wxCommandEvent& event);
         void OnChoice1Select(wxCommandEvent& event);
+        void OnRadioButton1Select(wxCommandEvent& event);
+        void OnRadioButton2Select(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(connect_fourDialog)
@@ -116,6 +122,52 @@ class connect_fourDialog: public wxDialog
         static const long ID_BITMAPBUTTON51;
         static const long ID_BITMAPBUTTON52;
         static const long ID_BITMAPBUTTON50;
+        static const long ID_STATICTEXT7;
+        static const long ID_RADIOBUTTON1;
+        static const long ID_RADIOBUTTON2;
+        static const long ID_STATICTEXT8;
+        static const long ID_STATICTEXT14;
+        static const long ID_STATICTEXT13;
+        static const long ID_STATICTEXT12;
+        static const long ID_STATICTEXT11;
+        static const long ID_STATICTEXT10;
+        static const long ID_STATICTEXT9;
+        static const long ID_STATICTEXT21;
+        static const long ID_STATICTEXT20;
+        static const long ID_STATICTEXT19;
+        static const long ID_STATICTEXT18;
+        static const long ID_STATICTEXT17;
+        static const long ID_STATICTEXT16;
+        static const long ID_STATICTEXT28;
+        static const long ID_STATICTEXT27;
+        static const long ID_STATICTEXT26;
+        static const long ID_STATICTEXT25;
+        static const long ID_STATICTEXT24;
+        static const long ID_STATICTEXT23;
+        static const long ID_STATICTEXT35;
+        static const long ID_STATICTEXT34;
+        static const long ID_STATICTEXT33;
+        static const long ID_STATICTEXT32;
+        static const long ID_STATICTEXT31;
+        static const long ID_STATICTEXT30;
+        static const long ID_STATICTEXT42;
+        static const long ID_STATICTEXT41;
+        static const long ID_STATICTEXT40;
+        static const long ID_STATICTEXT39;
+        static const long ID_STATICTEXT38;
+        static const long ID_STATICTEXT37;
+        static const long ID_STATICTEXT49;
+        static const long ID_STATICTEXT48;
+        static const long ID_STATICTEXT47;
+        static const long ID_STATICTEXT46;
+        static const long ID_STATICTEXT45;
+        static const long ID_STATICTEXT44;
+        static const long ID_STATICTEXT22;
+        static const long ID_STATICTEXT15;
+        static const long ID_STATICTEXT54;
+        static const long ID_STATICTEXT53;
+        static const long ID_STATICTEXT52;
+        static const long ID_STATICTEXT51;
         static const long ID_STATICTEXT2;
         static const long ID_BITMAPBUTTON53;
         static const long ID_CHECKBOX1;
@@ -188,12 +240,58 @@ class connect_fourDialog: public wxDialog
         wxCheckBox* CheckBox1;
         wxChoice* Choice1;
         wxFlexGridSizer* FlexGridSizer19;
+        wxRadioButton* RadioButton1;
+        wxRadioButton* RadioButton2;
+        wxStaticText* StaticText10;
+        wxStaticText* StaticText11;
+        wxStaticText* StaticText12;
+        wxStaticText* StaticText13;
+        wxStaticText* StaticText14;
+        wxStaticText* StaticText15;
+        wxStaticText* StaticText16;
+        wxStaticText* StaticText17;
+        wxStaticText* StaticText18;
+        wxStaticText* StaticText19;
         wxStaticText* StaticText1;
+        wxStaticText* StaticText20;
+        wxStaticText* StaticText21;
+        wxStaticText* StaticText22;
+        wxStaticText* StaticText23;
+        wxStaticText* StaticText24;
+        wxStaticText* StaticText25;
+        wxStaticText* StaticText26;
+        wxStaticText* StaticText27;
+        wxStaticText* StaticText28;
         wxStaticText* StaticText2;
+        wxStaticText* StaticText30;
+        wxStaticText* StaticText31;
+        wxStaticText* StaticText32;
+        wxStaticText* StaticText33;
+        wxStaticText* StaticText34;
+        wxStaticText* StaticText35;
+        wxStaticText* StaticText37;
+        wxStaticText* StaticText38;
+        wxStaticText* StaticText39;
         wxStaticText* StaticText3;
+        wxStaticText* StaticText40;
+        wxStaticText* StaticText41;
+        wxStaticText* StaticText42;
+        wxStaticText* StaticText44;
+        wxStaticText* StaticText45;
+        wxStaticText* StaticText46;
+        wxStaticText* StaticText47;
+        wxStaticText* StaticText48;
+        wxStaticText* StaticText49;
         wxStaticText* StaticText4;
+        wxStaticText* StaticText51;
+        wxStaticText* StaticText52;
+        wxStaticText* StaticText53;
+        wxStaticText* StaticText54;
         wxStaticText* StaticText5;
         wxStaticText* StaticText6;
+        wxStaticText* StaticText7;
+        wxStaticText* StaticText8;
+        wxStaticText* StaticText9;
         //*)
         bool licznik = true;
     wxBitmap rysunki[10];
@@ -208,6 +306,8 @@ class connect_fourDialog: public wxDialog
     int licznik_ruchow=0;
     int liczba_rund;
     int licznik_rund;
+    int kolumna_bota;
+    bool debug_flag;
         DECLARE_EVENT_TABLE()
 };
 

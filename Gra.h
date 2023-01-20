@@ -19,8 +19,9 @@ public:
     bool isMoveLegal();
     void WhereIsLegal(int k);
     bool Rezultat();
-    //void DrukujPlansze();
+    int DrukujPlansze(int numer_kolumny, int numer_wiersza);
     void WykonajRuch();
+    void WykonajRuch_z_AI();
     bool CheckCols();
     bool CheckRows();
     bool CheckDiags();
@@ -34,6 +35,13 @@ public:
     std::string rundy_graczy(int numer_gracza);
     void ending();
     std::string getKomunikat();
+    void RuchAI();
+    bool CzyMoznaWstawic(int i, int j);
+    void setgraAI(bool wartosc);
+    void setwiersz_kolumna_bota(int kolumna);
+    int getwiersz_bota();
+    int getkolumna_bota();
+    void ruch_bota(int kolumna);
 
 private:
     std::string komunikat;
@@ -49,6 +57,11 @@ private:
     int winningToken = 0;
     int liczba_rund;
     int rundy[2];
+    int PlayerColor = 1;
+    int AIColor = 2;
+    bool graAI;
+    int wiersz_bota;
+    int kolumna_bota;
 };
 
 
