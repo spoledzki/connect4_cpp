@@ -17,7 +17,9 @@
 #define _(s) wxString::FromUTF8(s)
 
 //(*InternalHeaders(connect_fourDialog)
+#include <wx/bitmap.h>
 #include <wx/font.h>
+#include <wx/image.h>
 #include <wx/intl.h>
 #include <wx/string.h>
 //*)
@@ -51,7 +53,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 wxString s2w(std::string s);
 
 //(*IdInit(connect_fourDialog)
-const long connect_fourDialog::ID_STATICTEXT1 = wxNewId();
+const long connect_fourDialog::ID_STATICBITMAP1 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON7 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON8 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON9 = wxNewId();
@@ -103,7 +105,6 @@ const long connect_fourDialog::ID_BITMAPBUTTON6 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON49 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON51 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON52 = wxNewId();
-const long connect_fourDialog::ID_BITMAPBUTTON50 = wxNewId();
 const long connect_fourDialog::ID_STATICTEXT7 = wxNewId();
 const long connect_fourDialog::ID_RADIOBUTTON1 = wxNewId();
 const long connect_fourDialog::ID_RADIOBUTTON2 = wxNewId();
@@ -160,6 +161,7 @@ const long connect_fourDialog::ID_STATICTEXT3 = wxNewId();
 const long connect_fourDialog::ID_STATICTEXT4 = wxNewId();
 const long connect_fourDialog::ID_STATICTEXT5 = wxNewId();
 const long connect_fourDialog::ID_BITMAPBUTTON55 = wxNewId();
+const long connect_fourDialog::ID_BITMAPBUTTON50 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(connect_fourDialog,wxDialog)
@@ -205,10 +207,8 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     SetBackgroundColour(wxColour(50,170,180));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     FlexGridSizer13 = new wxFlexGridSizer(0, 1, 0, 0);
-    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Connect 4"), wxDefaultPosition, wxSize(267,33), wxALIGN_CENTRE, _T("ID_STATICTEXT1"));
-    wxFont StaticText1Font(20,wxFONTFAMILY_MODERN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Consolas"),wxFONTENCODING_DEFAULT);
-    StaticText1->SetFont(StaticText1Font);
-    FlexGridSizer13->Add(StaticText1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
+    StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\serwis\\OneDrive\\Dokumenty\\labki\\projekt_z_programowania\\projekt\\connect_4_AI\\pictures\\connect_4.png")).Rescale(wxSize(340,70).GetWidth(),wxSize(340,70).GetHeight())), wxDefaultPosition, wxSize(340,70), 0, _T("ID_STATICBITMAP1"));
+    FlexGridSizer13->Add(StaticBitmap1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer17 = new wxFlexGridSizer(0, 2, 0, 0);
     FlexGridSizer4 = new wxFlexGridSizer(0, 1, 0, 0);
     FlexGridSizer2 = new wxFlexGridSizer(0, 1, 0, 0);
@@ -347,17 +347,13 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer12->Add(BitmapButton51, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BitmapButton52 = new wxBitmapButton(this, ID_BITMAPBUTTON52, wxNullBitmap, wxDefaultPosition, wxSize(150,30), wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_BITMAPBUTTON52"));
     FlexGridSizer12->Add(BitmapButton52, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BitmapButton50 = new wxBitmapButton(this, ID_BITMAPBUTTON50, wxNullBitmap, wxDefaultPosition, wxSize(150,30), wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_BITMAPBUTTON50"));
-    wxFont BitmapButton50Font(10,wxFONTFAMILY_MODERN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Consolas"),wxFONTENCODING_DEFAULT);
-    BitmapButton50->SetFont(BitmapButton50Font);
-    FlexGridSizer12->Add(BitmapButton50, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText7 = new wxStaticText(this, ID_STATICTEXT7, _("Wybierz rodzaj rozgrywki"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT7"));
     FlexGridSizer12->Add(StaticText7, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer20 = new wxFlexGridSizer(0, 2, 0, 0);
     RadioButton1 = new wxRadioButton(this, ID_RADIOBUTTON1, _("2 Gracz"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON1"));
-    RadioButton1->SetValue(true);
     FlexGridSizer20->Add(RadioButton1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     RadioButton2 = new wxRadioButton(this, ID_RADIOBUTTON2, _("Komputer"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON2"));
+    RadioButton2->SetValue(true);
     FlexGridSizer20->Add(RadioButton2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer12->Add(FlexGridSizer20, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer30->Add(FlexGridSizer12, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
@@ -473,7 +469,7 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer15->Add(BitmapButton53, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer14->Add(FlexGridSizer15, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     CheckBox1 = new wxCheckBox(this, ID_CHECKBOX1, _("Rundy"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
-    CheckBox1->SetValue(false);
+    CheckBox1->SetValue(true);
     FlexGridSizer14->Add(CheckBox1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer19 = new wxFlexGridSizer(0, 1, 0, 0);
     FlexGridSizer18 = new wxFlexGridSizer(0, 2, 0, 0);
@@ -499,9 +495,13 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer16->Add(BitmapButton55, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer19->Add(FlexGridSizer16, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer14->Add(FlexGridSizer19, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BitmapButton50 = new wxBitmapButton(this, ID_BITMAPBUTTON50, wxNullBitmap, wxDefaultPosition, wxSize(150,30), wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_BITMAPBUTTON50"));
+    wxFont BitmapButton50Font(10,wxFONTFAMILY_MODERN,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Consolas"),wxFONTENCODING_DEFAULT);
+    BitmapButton50->SetFont(BitmapButton50Font);
+    FlexGridSizer14->Add(BitmapButton50, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer17->Add(FlexGridSizer14, 1, wxALL|wxEXPAND, 5);
     FlexGridSizer13->Add(FlexGridSizer17, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxSizer1->Add(FlexGridSizer13, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxSizer1->Add(FlexGridSizer13, 1, wxALL, 5);
     SetSizer(BoxSizer1);
     BoxSizer1->Fit(this);
     BoxSizer1->SetSizeHints(this);
@@ -516,11 +516,11 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     Connect(ID_BITMAPBUTTON49,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton1Click);
     Connect(ID_BITMAPBUTTON51,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton51Click);
     Connect(ID_BITMAPBUTTON52,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnBitmapButton52Click);
-    Connect(ID_BITMAPBUTTON50,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnQuit);
     Connect(ID_RADIOBUTTON1,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&connect_fourDialog::OnRadioButton1Select);
     Connect(ID_RADIOBUTTON2,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&connect_fourDialog::OnRadioButton2Select);
     Connect(ID_CHECKBOX1,wxEVT_COMMAND_CHECKBOX_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnCheckBox1Click);
     Connect(ID_CHOICE1,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&connect_fourDialog::OnChoice1Select);
+    Connect(ID_BITMAPBUTTON50,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&connect_fourDialog::OnQuit);
     //*)
 
     //ustawienie tablic i rysunków
@@ -532,6 +532,10 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     rysunki[4]=wxBitmap(wxImage("pictures/restart.bmp"));
     rysunki[5]=wxBitmap(wxImage("pictures/exit.bmp"));
     rysunki[6]=wxBitmap(wxImage("pictures/tutorial.bmp"));
+    rysunki[7]=wxBitmap(wxImage("pictures/tutorial.jpg"));
+    rysunki[8]=wxBitmap(wxImage("pictures/restart.jpg"));
+    rysunki[9]=wxBitmap(wxImage("pictures/quit.jpg"));
+    rysunki[10]=wxBitmap(wxImage("pictures/connect_4.png"));
     #define pw(nr, i) plansza1[i]=BitmapButton ##nr
     pw(7,0); pw(8,1); pw(9,2); pw(10,3); pw(11,4); pw(12,5);
     #undef pw
@@ -577,15 +581,20 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
         plansza6[i] -> SetBitmap(rysunki[0]);
         plansza7[i] -> SetBitmap(rysunki[0]);
     }
-    BitmapButton50 -> SetBitmap(rysunki[5]);
-    BitmapButton51 -> SetBitmap(rysunki[6]);
-    BitmapButton52 -> SetBitmap(rysunki[4]);
-    BitmapButton52 -> SetLabel("Restart");
+    //BitmapButton50 -> SetBitmap(rysunki[5]);
+    BitmapButton50 -> SetBitmap(rysunki[9]);
     BitmapButton50 -> SetLabel(wxString("Wyjdź z gry"));
+
+    //BitmapButton52 -> SetBitmap(rysunki[4]);
+    BitmapButton52 -> SetBitmap(rysunki[8]);
+    BitmapButton52 -> SetLabel("Restart");
+    //BitmapButton51 -> SetBitmap(rysunki[6]);
+    BitmapButton51 -> SetBitmap(rysunki[7]);
     BitmapButton51 -> SetLabel(wxString("Instrukcja"));
     BitmapButton54 -> SetBitmap(rysunki[1]);
     BitmapButton55 -> SetBitmap(rysunki[2]);
     BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
+    BoxSizer1 -> Fit(this);
     if(!CheckBox1 -> IsChecked()){
         BitmapButton54 -> Hide();
         BitmapButton55 -> Hide();

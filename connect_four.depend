@@ -4390,7 +4390,7 @@
 1673446941 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourapp.h
 	<wx/app.h>
 
-1674471839 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.h
+1674497970 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.h
 	<string>
 	<wx/bmpbuttn.h>
 	<wx/checkbox.h>
@@ -4398,6 +4398,7 @@
 	<wx/dialog.h>
 	<wx/radiobut.h>
 	<wx/sizer.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 
 1667235522 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\radiobut.h
@@ -4434,14 +4435,16 @@
 1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\resource.rc
 	"wx/msw/wx.rc"
 
-1674472424 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
+1674497970 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
 	<ctime>
 	<cstring>
 	<windows.h>
+	<wx/bitmap.h>
 	<wx/font.h>
+	<wx/image.h>
 	<wx/intl.h>
 	<wx/string.h>
 
@@ -4458,4 +4461,52 @@
 	<cstring>
 	<ctime>
 	<cstdlib>
+
+1667235516 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\statbmp.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/univ/statbmp.h"
+	"wx/msw/statbmp.h"
+	"wx/motif/statbmp.h"
+	"wx/gtk/statbmp.h"
+	"wx/gtk1/statbmp.h"
+	"wx/osx/statbmp.h"
+	"wx/cocoa/statbmp.h"
+	"wx/os2/statbmp.h"
+
+1667235558 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\univ\statbmp.h
+	"wx/bitmap.h"
+
+1667235534 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\msw\statbmp.h
+	"wx/control.h"
+	"wx/icon.h"
+	"wx/bitmap.h"
+
+1667235548 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\motif\statbmp.h
+	"wx/motif/bmpmotif.h"
+	"wx/icon.h"
+
+1667235542 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk\statbmp.h
+	"wx/icon.h"
+
+1667235540 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\gtk1\statbmp.h
+	"wx/icon.h"
+
+1667235526 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\statbmp.h
+	"wx/osx/carbon/statbmp.h"
+	"wx/generic/statbmpg.h"
+
+1667235528 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\osx\carbon\statbmp.h
+	"wx/icon.h"
+
+1667235530 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\generic\statbmpg.h
+	"wx/statbmp.h"
+
+1667235556 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\cocoa\statbmp.h
+
+1667235550 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\statbmp.h
+	"wx/control.h"
+	"wx/icon.h"
 

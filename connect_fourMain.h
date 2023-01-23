@@ -20,6 +20,7 @@
 #include <wx/dialog.h>
 #include <wx/radiobut.h>
 #include <wx/sizer.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 //*)
 
@@ -69,7 +70,7 @@ class connect_fourDialog: public wxDialog
         //*)
 
         //(*Identifiers(connect_fourDialog)
-        static const long ID_STATICTEXT1;
+        static const long ID_STATICBITMAP1;
         static const long ID_BITMAPBUTTON7;
         static const long ID_BITMAPBUTTON8;
         static const long ID_BITMAPBUTTON9;
@@ -121,7 +122,6 @@ class connect_fourDialog: public wxDialog
         static const long ID_BITMAPBUTTON49;
         static const long ID_BITMAPBUTTON51;
         static const long ID_BITMAPBUTTON52;
-        static const long ID_BITMAPBUTTON50;
         static const long ID_STATICTEXT7;
         static const long ID_RADIOBUTTON1;
         static const long ID_RADIOBUTTON2;
@@ -178,6 +178,7 @@ class connect_fourDialog: public wxDialog
         static const long ID_STATICTEXT4;
         static const long ID_STATICTEXT5;
         static const long ID_BITMAPBUTTON55;
+        static const long ID_BITMAPBUTTON50;
         //*)
 
         //(*Declarations(connect_fourDialog)
@@ -242,6 +243,7 @@ class connect_fourDialog: public wxDialog
         wxFlexGridSizer* FlexGridSizer19;
         wxRadioButton* RadioButton1;
         wxRadioButton* RadioButton2;
+        wxStaticBitmap* StaticBitmap1;
         wxStaticText* StaticText10;
         wxStaticText* StaticText11;
         wxStaticText* StaticText12;
@@ -252,7 +254,6 @@ class connect_fourDialog: public wxDialog
         wxStaticText* StaticText17;
         wxStaticText* StaticText18;
         wxStaticText* StaticText19;
-        wxStaticText* StaticText1;
         wxStaticText* StaticText20;
         wxStaticText* StaticText21;
         wxStaticText* StaticText22;
@@ -294,7 +295,7 @@ class connect_fourDialog: public wxDialog
         wxStaticText* StaticText9;
         //*)
         bool licznik = true;
-    wxBitmap rysunki[10];
+    wxBitmap rysunki[12];
     wxBitmapButton *plansza1[6];
     wxBitmapButton *plansza2[6];
     wxBitmapButton *plansza3[6];
