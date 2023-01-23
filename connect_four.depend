@@ -4390,7 +4390,7 @@
 1673446941 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourapp.h
 	<wx/app.h>
 
-1674233107 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.h
+1674471839 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.h
 	<string>
 	<wx/bmpbuttn.h>
 	<wx/checkbox.h>
@@ -4434,7 +4434,7 @@
 1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\resource.rc
 	"wx/msw/wx.rc"
 
-1674233163 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
+1674472424 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
@@ -4445,13 +4445,13 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1674229544 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\gra.h
+1674472454 c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\gra.h
 	<iostream>
 	<regex>
 	<string>
 	<sstream>
 
-1674232021 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\gra.cpp
+1674470767 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\gra.cpp
 	"Gra.h"
 	<iostream>
 	<sstream>

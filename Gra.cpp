@@ -1,6 +1,3 @@
-//
-// Created by Szymon 20.12.2022.
-//
 
 #include "Gra.h"
 #include <iostream>
@@ -8,7 +5,6 @@
 #include <cstring>
 #include <ctime>
 #include <cstdlib>
-using namespace std;
 Gra::Gra(){
     srand(time(NULL));
     Plansza = new int*[gameCols];
@@ -22,10 +18,12 @@ Gra::Gra(){
         rundy[i] = 0;
     }
 
-    //roundCount = rand() % 2 + 1;
+    roundCount = rand() % 2 + 1;
 }
 
 Gra::~Gra(){
+
+
 }
 
 bool Gra::isColLegal(int k){
@@ -283,9 +281,9 @@ void Gra::ending(){
 }
 
 std::string Gra::rundy_graczy(int numer_gracza){
-    stringstream ss;
-    ss<<to_string(rundy[numer_gracza]);
-    string drukuj = ss.str();
+    std::stringstream ss;
+    ss<<std::to_string(rundy[numer_gracza]);
+    std::string drukuj = ss.str();
 return drukuj;
 }
 
@@ -303,35 +301,34 @@ for(int i=0;i<2;i++){
 void Gra::RuchAI() {
     //srand(time(NULL));
     //lastPickCol = rand()%7 + 1;
+    int j;
     std::string check_col, check_row, check_diag1, check_diag2;
     std::string check_col_twos, check_row_twos, check_diag1_twos, check_diag_2twos;
     std::string check_col_ai, check_row_ai, check_diag1_ai, check_diag2_ai;
     std::string check_row_fives;
-    int j;
     //sprawdzanie trojek
-    std::regex reg1a("0222");
-    std::regex reg2a("2220");
-    std::regex reg3a("2022");
-    std::regex reg4a("2202");
+    std::regex reg1a("0222"); std::string reg1a_s("0222");
+    std::regex reg2a("2220"); std::string reg2a_s("2220");
+    std::regex reg3a("2022"); std::string reg3a_s("2022");
+    std::regex reg4a("2202"); std::string reg4a_s("2202");
 
-    std::regex reg1b("0111");
-    std::regex reg2b("1110");
-    std::regex reg3b("1011");
-    std::regex reg4b("1101");
+    std::regex reg1b("0111"); std::string reg1b_s("0111");
+    std::regex reg2b("1110"); std::string reg2b_s("1110");
+    std::regex reg3b("1011"); std::string reg3b_s("1011");
+    std::regex reg4b("1101"); std::string reg4b_s("1101");
 
     //sprawdzanie dwojek
-    std::regex reg5("2200");
-    std::regex reg6("0022");
-    std::regex reg7("2002");
-    std::regex reg8("0202");
-    std::regex reg9("2020");
-    std::regex reg10("0220");
+    std::regex reg5("2200"); std::string reg5_s("2200");
+    std::regex reg6("0022"); std::string reg6_s("0022");
+    std::regex reg7("2002"); std::string reg7_s("2002");
+    std::regex reg8("0202"); std::string reg8_s("0202");
+    std::regex reg9("2020"); std::string reg9_s("2020");
+    std::regex reg10("0220"); std::string reg10_s("0220");
 
     //sprawdzanie dwojek w piatkach przeciwnika
 
-    std::regex reg11("01100");
-    std::regex reg12("00110");
-
+    std::regex reg11("01100"); std::string reg11_s("01100");
+    std::regex reg12("00110"); std::string reg12_s("00110");
 
 
 
@@ -339,43 +336,36 @@ void Gra::RuchAI() {
     //Trojki w wierszach
 
     //ai
+    std::cout << "Sprawdzam trojki w wierszach dla AI" << std::endl;
     for(int i=0; i<6; i++){
         for(int j=0; j<7; j++){
             check_row += std::to_string(Plansza[j][i]);
-            //std::cout << check_row <<std::endl;
+            std::cout << check_row <<std::endl;
             if(std::regex_search(check_row, reg1a)){
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3, rowToInsert)) {
-                        ruch_bota(j-3);
-                    Plansza[j-3][rowToInsert] = AIColor;
-                    roundCount++;
+                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row, reg1a_s).length()%4), i-1)) {
+                    ruch_bota(j-3);
                     return;
                 }
             }
             else if(std::regex_search(check_row, reg2a)){
                 WhereIsLegal(j);
-                if(CzyMoznaWstawic(j, rowToInsert)) {ruch_bota(j);
-                    Plansza[j][rowToInsert] = AIColor;
-
-                    roundCount++;
+                if(CzyMoznaWstawic(j-(Ucinanie(check_row, reg2a_s).length()%4), i-1)) {
+                    ruch_bota(j);
                     return;
                 }
             }
             else if(std::regex_search(check_row, reg3a)){
                 WhereIsLegal(j-2);
-                if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                    Plansza[j-2][rowToInsert] = AIColor;
-
-                    roundCount++;
+                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row, reg3a_s).length()%4), i-1)) {
+                    ruch_bota(j-2);
                     return;
                 }
             }
             else if(std::regex_search(check_row, reg4a)){
                 WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                    Plansza[j-1][rowToInsert] = AIColor;
-
-                    roundCount++;
+                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row, reg4a_s).length()%4), i-1)) {
+                    ruch_bota(j-1);
                     return;
                 }
             }
@@ -385,88 +375,32 @@ void Gra::RuchAI() {
 
     }
 
-    //gracz
-    for(int i=0; i<6; i++){
-        for(int j=0; j<7; j++){
-            check_row_ai += std::to_string(Plansza[j][i]);
-            //std::cout << check_row <<std::endl;
-            if(std::regex_search(check_row_ai, reg1b)){
-                WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                    Plansza[j-3][rowToInsert] = AIColor;
-
-                    roundCount++;
-                    return;
-                }
-            }
-            else if(std::regex_search(check_row_ai, reg2b)){
-                WhereIsLegal(j);
-                if(CzyMoznaWstawic(j, rowToInsert)) {ruch_bota(j);
-                    Plansza[j][rowToInsert] = AIColor;
-
-                    roundCount++;
-                    return;
-                }
-            }
-            else if(std::regex_search(check_row_ai, reg3b)){
-                WhereIsLegal(j-2);
-                if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                    Plansza[j-2][rowToInsert] = AIColor;
-
-                    roundCount++;
-                    return;
-                }
-            }
-            else if(std::regex_search(check_row_ai, reg4b)){
-                WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                    Plansza[j-1][rowToInsert] = AIColor;
-
-                    roundCount++;
-                    return;
-                }
-            }
-
-        }
-        check_row_ai="";
-
-    }
-
-
     //Trojki w kolumnach
 
     //ai
+    std::cout << "Sprawdzam trojki w kolumnach dla AI" << std::endl;
     for(int i=0; i<7; i++){
         for(int j=0; j<6; j++){
             check_col += std::to_string(Plansza[i][j]);
-            //std::cout<<check_col<<std::endl;
+            std::cout<<check_col<<std::endl;
             if(std::regex_search(check_col, reg1a)){
                 WhereIsLegal(i);
                 ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
                 return;
             }
             else if(std::regex_search(check_col, reg2a)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col, reg3a)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col, reg4a)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
 
@@ -474,151 +408,48 @@ void Gra::RuchAI() {
         check_col="";
     }
 
-    //gracz
-    for(int i=0; i<7; i++){
-        for(int j=0; j<6; j++){
-            check_col_ai += std::to_string(Plansza[i][j]);
-            //std::cout<<check_col<<std::endl;
-            if(std::regex_search(check_col_ai, reg1b)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
-            }
-            else if(std::regex_search(check_col_ai, reg2b)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
-            }
-            else if(std::regex_search(check_col_ai, reg3b)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
-            }
-            else if(std::regex_search(check_col_ai, reg4b)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
-            }
-
-        }
-        check_col_ai="";
-    }
-
     //Trojki na przekatnych
     //ai
+    std::cout << "Sprawdzam trojki na przekatnych LDRU dla AI" << std::endl;
     for(int i = -2; i<4; i++){
         j = i;
 
         for(int k = 0; k<6; k++){
             if(isColLegal(j)){
                 check_diag1 += std::to_string(Plansza[j][k]);
-                //std::cout << check_diag1 <<std::endl;
-                if(std::regex_search(check_diag1, reg1a) || std::regex_search(check_diag1, reg1b)){
+                std::cout << check_diag1 <<std::endl;
+                if(std::regex_search(check_diag1, reg1a)){
                     WhereIsLegal(j-3);
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1, reg1a_s).length()%4), k-4-(Ucinanie(check_diag1, reg1a_s).length()%4))) {
+                        ruch_bota(j-3);
                         return;
                     }
 
                 }
-                else if(std::regex_search(check_diag1, reg2a) || std::regex_search(check_diag1, reg2b)){
+                else if(std::regex_search(check_diag1, reg2a)){
                     WhereIsLegal(j);
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j, rowToInsert)) {ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1, reg2a_s).length()%4), k-1-(Ucinanie(check_diag1, reg2a_s).length()%4))) {
+                        ruch_bota(j);
                         return;
                     }
 
                 }
-                else if(std::regex_search(check_diag1, reg3a) || std::regex_search(check_diag1, reg3b)){
+                else if(std::regex_search(check_diag1, reg3a)){
                     WhereIsLegal(j-2);
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1, reg3a_s).length()%4), k-3-(Ucinanie(check_diag1, reg3a_s).length()%4))) {
+                        ruch_bota(j-2);
                         return;
                     }
 
                 }
-                else if(std::regex_search(check_diag1, reg4a) || std::regex_search(check_diag1, reg4b)){
+                else if(std::regex_search(check_diag1, reg4a)){
                     WhereIsLegal(j-1);
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
-                        return;
-                    }
-                //check="";
-                }
-            }
-            j++;
-        }
-        check_diag1="";
-    }
-
-    //gracz
-    for(int i = -2; i<4; i++){
-        j = i;
-
-        for(int k = 0; k<6; k++){
-            if(isColLegal(j)){
-                check_diag1_ai += std::to_string(Plansza[j][k]);
-                //std::cout << check_diag1_ai <<std::endl;
-                if(std::regex_search(check_diag1_ai, reg1b)){
-                    WhereIsLegal(j-3);
-                    //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
-                        return;
-                    }
-
-                }
-                else if(std::regex_search(check_diag1_ai, reg2b)){
-                    WhereIsLegal(j);
-                    //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j, rowToInsert)) {ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
-                        return;
-                    }
-
-                }
-                else if(std::regex_search(check_diag1_ai, reg3b)){
-                    WhereIsLegal(j-2);
-                    //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
-                        return;
-                    }
-
-                }
-                else if(std::regex_search(check_diag1_ai, reg4b)){
-                    WhereIsLegal(j-1);
-                    //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1, reg4a_s).length()%4), k-2-(Ucinanie(check_diag1, reg4a_s).length()%4))) {
+                        ruch_bota(j-1);
                         return;
                     }
                     //check="";
@@ -626,52 +457,45 @@ void Gra::RuchAI() {
             }
             j++;
         }
-        check_diag1_ai="";
+        check_diag1="";
     }
 
     //ai
+    std::cout << "Sprawdzam trojki na przekatnych LURD dla AI" << std::endl;
     for(int i = -2; i<4; i++){
         j = i;
         for(int k = 5; k>-1; k--){
             if(isColLegal(j)){
                 check_diag2 += std::to_string(Plansza[j][k]);
-                //std::cout << check_diag2 <<std::endl;
-                if(std::regex_search(check_diag2, reg1a) || std::regex_search(check_diag2, reg1b)){
+                std::cout << check_diag2 <<std::endl;
+                if(std::regex_search(check_diag2, reg1a)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag2, reg1a_s).length()%4), k+2+(Ucinanie(check_diag2, reg1a_s).length()%4))) {
+                        ruch_bota(j-3);
                         return;
                     }
 
                 }
-                else if(std::regex_search(check_diag2, reg2a) || std::regex_search(check_diag2, reg2b)){
+                else if(std::regex_search(check_diag2, reg2a)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag2, reg2a_s).length()%4), k-1+(Ucinanie(check_diag2, reg2a_s).length()%4))) {
+                        ruch_bota(j);
                         return;
                     }
 
                 }
-                else if(std::regex_search(check_diag2, reg3a) || std::regex_search(check_diag2, reg3b)){
+                else if(std::regex_search(check_diag2, reg3a)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag2, reg3a_s).length()%4), k+1+(Ucinanie(check_diag2, reg3a_s).length()%4))) {
+                        ruch_bota(j-2);
                         return;
                     }
 
                 }
-                else if(std::regex_search(check_diag2, reg4a) || std::regex_search(check_diag2, reg4b)){
+                else if(std::regex_search(check_diag2, reg4a)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag2, reg4a_s).length()%4), k+(Ucinanie(check_diag2, reg4a_s).length()%4))) {
+                        ruch_bota(j-1);
                         return;
                     }
 
@@ -682,49 +506,170 @@ void Gra::RuchAI() {
         check_diag2="";
     }
 
+    //Trojki w wierszach
+
     //gracz
+    std::cout << "Sprawdzam trojki w wierszach dla gracza" << std::endl;
+    for(int i=0; i<6; i++){
+        for(int j=0; j<7; j++){
+            check_row_ai += std::to_string(Plansza[j][i]);
+            std::cout << check_row_ai <<std::endl;
+            if(std::regex_search(check_row_ai, reg1b)){
+                WhereIsLegal(j-3);
+                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_ai, reg1b_s).length()%4), i-1)) {
+                    ruch_bota(j-3);
+                    return;
+                }
+            }
+            else if(std::regex_search(check_row_ai, reg2b)){
+                WhereIsLegal(j);
+                if(CzyMoznaWstawic(j-(Ucinanie(check_row_ai, reg2b_s).length()%4), i-1)) {
+                    ruch_bota(j);
+                    return;
+                }
+            }
+            else if(std::regex_search(check_row_ai, reg3b)){
+                WhereIsLegal(j-2);
+                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_ai, reg3b_s).length()%4), i-1)) {
+                    ruch_bota(j-2);
+                    return;
+                }
+            }
+            else if(std::regex_search(check_row_ai, reg4b)){
+                WhereIsLegal(j-1);
+                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_ai, reg4b_s).length()%4), i-1)) {
+                    ruch_bota(j-1);
+                    return;
+                }
+            }
+
+        }
+        check_row_ai="";
+
+    }
+
+    //Trojki w kolumnach
+
+    //gracz
+    std::cout << "Sprawdzam trojki w kolumnach dla gracza" << std::endl;
+    for(int i=0; i<7; i++){
+        for(int j=0; j<6; j++){
+            check_col_ai += std::to_string(Plansza[i][j]);
+            std::cout<<check_col_ai<<std::endl;
+            if(std::regex_search(check_col_ai, reg1b)){
+                WhereIsLegal(i);
+                ruch_bota(i);
+                return;
+            }
+            else if(std::regex_search(check_col_ai, reg2b)){
+                WhereIsLegal(i);
+                ruch_bota(i);
+                return;
+            }
+            else if(std::regex_search(check_col_ai, reg3b)){
+                WhereIsLegal(i);
+                ruch_bota(i);
+                return;
+            }
+            else if(std::regex_search(check_col_ai, reg4b)){
+                WhereIsLegal(i);
+                ruch_bota(i);
+                return;
+            }
+
+        }
+        check_col_ai="";
+    }
+
+    //Trojki na przekatnych
+
+    //gracz
+    std::cout << "Sprawdzam trojki na przekatnych LDRU dla gracza" << std::endl;
+    for(int i = -2; i<4; i++){
+        j = i;
+
+        for(int k = 0; k<6; k++){
+            if(isColLegal(j)){
+                check_diag1_ai += std::to_string(Plansza[j][k]);
+                std::cout << check_diag1_ai <<std::endl;
+                if(std::regex_search(check_diag1_ai, reg1b)){
+                    WhereIsLegal(j-3);
+                    //std::cout << check_diag1 <<std::endl;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_ai, reg1b_s).length()%4), k-4-(Ucinanie(check_diag1_ai, reg1b_s).length()%4))) {
+                        ruch_bota(j-3);
+                        return;
+                    }
+
+                }
+                else if(std::regex_search(check_diag1_ai, reg2b)){
+                    WhereIsLegal(j);
+                    //std::cout << check_diag1 <<std::endl;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_ai, reg2b_s).length()%4), k-1-(Ucinanie(check_diag1_ai, reg2b_s).length()%4))) {
+                        ruch_bota(j);
+                        return;
+                    }
+
+                }
+                else if(std::regex_search(check_diag1_ai, reg3b)){
+                    WhereIsLegal(j-2);
+                    //std::cout << check_diag1 <<std::endl;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_ai, reg3b_s).length()%4), k-3-(Ucinanie(check_diag1_ai, reg3b_s).length()%4))) {
+                        ruch_bota(j-2);
+                        return;
+                    }
+
+                }
+                else if(std::regex_search(check_diag1_ai, reg4b)){
+                    WhereIsLegal(j-1);
+                    //std::cout << check_diag1 <<std::endl;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_ai, reg4b_s).length()%4), k-2-(Ucinanie(check_diag1_ai, reg4b_s).length()%4))) {
+                        ruch_bota(j-1);
+                        return;
+                    }
+                    //check="";
+                }
+            }
+            j++;
+        }
+        check_diag1_ai="";
+    }
+
+    //gracz
+    std::cout << "Sprawdzam trojki na przekatnych LURD dla gracza" << std::endl;
     for(int i = -2; i<4; i++){
         j = i;
         for(int k = 5; k>-1; k--){
             if(isColLegal(j)){
                 check_diag2_ai += std::to_string(Plansza[j][k]);
-                //std::cout << check_diag2 <<std::endl;
+                std::cout << check_diag2_ai <<std::endl;
                 if(std::regex_search(check_diag2_ai, reg1b)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag2_ai, reg1b_s).length()%4), k+2+(Ucinanie(check_diag2_ai, reg1b_s).length()%4))) {
+                        ruch_bota(j-3);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag2_ai, reg2b)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)) {ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag2_ai, reg2b_s).length()%4), k-1+(Ucinanie(check_diag2_ai, reg2b_s).length()%4))) {
+                        ruch_bota(j);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag2_ai, reg3b)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag2_ai, reg3b_s).length()%4), k+1+(Ucinanie(check_diag2_ai, reg3b_s).length()%4))) {
+                        ruch_bota(j-2);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag2_ai, reg4b)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag2_ai, reg4b_s).length()%4), k+(Ucinanie(check_diag2_ai, reg4b_s).length()%4))) {
+                        ruch_bota(j-1);
                         return;
                     }
 
@@ -736,50 +681,89 @@ void Gra::RuchAI() {
     }
 
     //Dwojki w wierszach
+    std::cout << "Sprawdzam dwojki w wierszach dla AI" << std::endl;
     for(int i=0; i<6; i++){
         for(int j=0; j<7; j++){
             check_row_twos += std::to_string(Plansza[j][i]);
+            std::cout<<check_row_twos<<std::endl;
             if(std::regex_search(check_row_twos, reg5)){
-                WhereIsLegal(j-1);ruch_bota(j-1);
-                Plansza[j-1][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
+                WhereIsLegal(j);
+                if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg5_s).length()%4), i-1)){
+                    ruch_bota(j);
+                    return;
+                }
+                WhereIsLegal(j-1);
+                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg5_s).length()%4), i-1)){
+                    ruch_bota(j-1);
+                    return;
+                }
             }
             else if(std::regex_search(check_row_twos, reg6)){
-                WhereIsLegal(j-2);ruch_bota(j-2);
-                Plansza[j-2][rowToInsert] = AIColor;
+                WhereIsLegal(j-2);
 
-                roundCount++;
-                return;
+                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg6_s).length()%4), i-1)){
+                    ruch_bota(j-2);
+                    return;
+                }
+                WhereIsLegal(j-3);
+                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg6_s).length()%4), i-1)){
+                    ruch_bota(j-3);
+                    return;
+                }
             }
             else if(std::regex_search(check_row_twos, reg7)){
-                WhereIsLegal(j-1);ruch_bota(j-1);
-                Plansza[j-1][rowToInsert] = AIColor;
 
-                roundCount++;
-                return;
+                WhereIsLegal(j-2);
+
+                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg7_s).length()%4), i-1)){
+                    ruch_bota(j-2);
+                    return;
+                }
+                WhereIsLegal(j-1);
+                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg7_s).length()%4), i-1)){
+                    ruch_bota(j-1);
+                    return;
+                }
             }
             else if(std::regex_search(check_row_twos, reg8)){
-                WhereIsLegal(j-3);ruch_bota(j-3);
-                Plansza[j-3][rowToInsert] = AIColor;
 
-                roundCount++;
-                return;
+                WhereIsLegal(j-1);
+
+                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg8_s).length()%4), i-1)){
+                    ruch_bota(j-1);
+                    return;
+                }
+                WhereIsLegal(j-3);
+                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg8_s).length()%4), i-1)){
+                    ruch_bota(j-3);
+                    return;
+                }
             }
             else if(std::regex_search(check_row_twos, reg9)){
-                WhereIsLegal(j);ruch_bota(j);
-                Plansza[j][rowToInsert] = AIColor;
 
-                roundCount++;
-                return;
+                WhereIsLegal(j-2);
+
+                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg9_s).length()%4), i-1)){
+                    ruch_bota(j-2);
+                    return;
+                }
+                WhereIsLegal(j);
+                if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg9_s).length()%4), i-1)){
+                    ruch_bota(j);
+                    return;
+                }
             }
             else if(std::regex_search(check_row_twos, reg10)){
-                WhereIsLegal(j);ruch_bota(j);
-                Plansza[j][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
+                WhereIsLegal(j);
+                if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg10_s).length()%4), i-1)) {
+                    ruch_bota(j);
+                    return;
+                }
+                WhereIsLegal(j-3);
+                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg10_s).length()%4), i-1)){
+                    ruch_bota(j-3);
+                    return;
+                }
             }
 
         }
@@ -787,49 +771,39 @@ void Gra::RuchAI() {
     }
 
     //Dwojki w kolumnach
+    std::cout << "Sprawdzam dwojki w kolumnach dla AI" << std::endl;
     for(int i=0; i<7; i++){
         for(int j=0; j<6; j++){
             check_col_twos += std::to_string(Plansza[i][j]);
+            std::cout<<check_col_twos<<std::endl;
             if(std::regex_search(check_col_twos, reg5)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col_twos, reg6)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col_twos, reg7)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col_twos, reg8)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col_twos, reg9)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
             else if(std::regex_search(check_col_twos, reg10)){
-                WhereIsLegal(i);ruch_bota(i);
-                Plansza[i][rowToInsert] = AIColor;
-
-                roundCount++;
+                WhereIsLegal(i);
+                ruch_bota(i);
                 return;
             }
 
@@ -837,112 +811,87 @@ void Gra::RuchAI() {
         check_col_twos="";
     }
 
-
     //Dwojki na przekatnych
-
+    std::cout << "Sprawdzam dwojki na przekatnych LDRU dla AI" << std::endl;
     for(int i=-2; i<4; i++){
         j=i;
         for(int k=0; k<6; k++){
             if(isColLegal(j)) {
                 check_diag1_twos += std::to_string(Plansza[j][k]);
-                //std::cout<<check_diag1_twos<<std::endl;
+                std::cout<<check_diag1_twos<<std::endl;
                 if(std::regex_search(check_diag1_twos, reg5)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)){ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg5_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg5_s).length()%4))){
+                        ruch_bota(j-1);
                         return;
                     }
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)){ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg5_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg5_s).length()%4))){
+                        ruch_bota(j);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag1_twos, reg6)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg6_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg6_s).length()%4))) {
+                        ruch_bota(j-2);
                         return;
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg6_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg6_s).length()%4))) {
+                        ruch_bota(j-3);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag1_twos, reg7)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg7_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg7_s).length()%4))) {
+                        ruch_bota(j-1);
                         return;
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)){ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg7_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg7_s).length()%4))){
+                        ruch_bota(j-2);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag1_twos, reg8)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)){ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg8_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg8_s).length()%4))){
+                        ruch_bota(j-3);
                         return;
                     }
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)){ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg8_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg8_s).length()%4))){
+                        ruch_bota(j-1);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag1_twos, reg9)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)){ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg9_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg9_s).length()%4))){
+                        ruch_bota(j);
                         return;
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)){ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg9_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg9_s).length()%4))){
+                        ruch_bota(j-2);
                         return;
                     }
                 }
                 else if(std::regex_search(check_diag1_twos, reg10)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)){ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg10_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg10_s).length()%4))){
+                        ruch_bota(j);
                         return;
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)){ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg10_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg10_s).length()%4))){
+                        ruch_bota(j-3);
                         return;
                     }
 
@@ -953,110 +902,86 @@ void Gra::RuchAI() {
         check_diag1_twos="";
     }
 
-
+    std::cout << "Sprawdzam dwojki na przekatnych LURD dla AI" << std::endl;
     for(int i=-2; i<4; i++){
         j=i;
         for(int k=5; k>-1; k--){
             if(isColLegal(j)) {
                 check_diag_2twos += std::to_string(Plansza[j][k]);
-                //std::cout<<check_diag1_twos<<std::endl;
+                std::cout<<check_diag_2twos<<std::endl;
                 if(std::regex_search(check_diag_2twos, reg5)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)){ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg5_s).length()%4), k+(Ucinanie(check_diag_2twos, reg5_s).length()%4))){
+                        ruch_bota(j-1);
                         return;
                     }
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)){ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg5_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg5_s).length()%4))){
+                        ruch_bota(j);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag_2twos, reg6)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)) {ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg6_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg6_s).length()%4))) {
+                        ruch_bota(j-2);
                         return;
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)) {ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg6_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg6_s).length()%4))) {
+                        ruch_bota(j-3);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag_2twos, reg7)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)) {ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg7_s).length()%4), k+(Ucinanie(check_diag_2twos, reg7_s).length()%4))) {
+                        ruch_bota(j-1);
                         return;
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)){ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg7_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg7_s).length()%4))){
+                        ruch_bota(j-2);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag_2twos, reg8)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)){ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg8_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg8_s).length()%4))){
+                        ruch_bota(j-3);
                         return;
                     }
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1, rowToInsert)){ruch_bota(j-1);
-                        Plansza[j-1][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg8_s).length()%4), k+(Ucinanie(check_diag_2twos, reg8_s).length()%4))){
+                        ruch_bota(j-1);
                         return;
                     }
 
                 }
                 else if(std::regex_search(check_diag_2twos, reg9)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)){ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg9_s).length()%4), k-1+(Ucinanie(check_diag_2twos, reg9_s).length()%4))){
+                        ruch_bota(j);
                         return;
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2, rowToInsert)){ruch_bota(j-2);
-                        Plansza[j-2][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg9_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg9_s).length()%4))){
+                        ruch_bota(j-2);
                         return;
                     }
                 }
                 else if(std::regex_search(check_diag_2twos, reg10)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j, rowToInsert)){ruch_bota(j);
-                        Plansza[j][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg10_s).length()%4), k-1+(Ucinanie(check_diag_2twos, reg10_s).length()%4))){
+                        ruch_bota(j);
                         return;
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3, rowToInsert)){ruch_bota(j-3);
-                        Plansza[j-3][rowToInsert] = AIColor;
-
-                        roundCount++;
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg10_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg10_s).length()%4))){
+                        ruch_bota(j-3);
                         return;
                     }
 
@@ -1068,23 +993,24 @@ void Gra::RuchAI() {
     }
 
     //Dwojki przeciwnika w piatkach
-
+    std::cout << "Sprawdzam dwojki w piatkach w wierszach dla AI" << std::endl;
     for(int i=0; i<6; i++){
         for(int j=0; j<7; j++){
             check_row_fives += std::to_string(Plansza[j][i]);
+            std::cout << check_row_fives <<std::endl;
             if(std::regex_search(check_row_fives, reg11)){
-                WhereIsLegal(j-1);ruch_bota(j-1);
-                Plansza[j-1][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
+                WhereIsLegal(j-1);
+                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_fives, reg11_s).length()%4), i-1)) {
+                    ruch_bota(j-1);
+                    return;
+                }
             }
             else if(std::regex_search(check_row_fives, reg12)){
-                WhereIsLegal(j-3);ruch_bota(j-3);
-                Plansza[j-3][rowToInsert] = AIColor;
-
-                roundCount++;
-                return;
+                WhereIsLegal(j-3);
+                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_fives, reg12_s).length()%4), i-1)) {
+                    ruch_bota(j-3);
+                    return;
+                }
             }
 
         }
@@ -1092,20 +1018,13 @@ void Gra::RuchAI() {
     }
 
 
-
-
-
-
-
     srand(time(NULL));
     lastPickCol = rand()%7 + 1;
     WhereIsLegal(lastPickCol-1);
 
-    if(isMoveLegal()){ruch_bota(lastPickCol-1);
-        Plansza[lastPickCol-1][rowToInsert] = AIColor;
-
-        roundCount++;
-
+    if(MoveLegal){
+        ruch_bota(lastPickCol-1);
+        //std::cout << "Losowy ruch" << std::endl;
     }
     else{
         RuchAI();
@@ -1125,7 +1044,7 @@ return kolumna_bota;
 
 
 bool Gra::CzyMoznaWstawic(int i, int j) {
-    return (Plansza[i][j-1]!=0);
+    return (Plansza[i][j]!=0);
 }
 
 
@@ -1135,6 +1054,11 @@ graAI = wartosc;
 
 void Gra::ruch_bota(int kolumna){
     setwiersz_kolumna_bota(kolumna);
+	Plansza[kolumna][rowToInsert] = AIColor;
+        roundCount++;
 
+}
 
+std::string Gra::Ucinanie(std::string check, std::string reg){
+    return check.substr(check.find(reg));
 }

@@ -308,6 +308,7 @@ class connect_fourDialog: public wxDialog
     int licznik_rund;
     int kolumna_bota;
     bool debug_flag;
+    bool gra_z_AI;
         DECLARE_EVENT_TABLE()
 };
 

@@ -15,7 +15,6 @@
 #include <windows.h>
 #undef _
 #define _(s) wxString::FromUTF8(s)
-using namespace std;
 
 //(*InternalHeaders(connect_fourDialog)
 #include <wx/font.h>
@@ -49,7 +48,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
     return wxbuild;
 }
 
-wxString s2w(string s);
+wxString s2w(std::string s);
 
 //(*IdInit(connect_fourDialog)
 const long connect_fourDialog::ID_STATICTEXT1 = wxNewId();
@@ -578,7 +577,6 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
         plansza6[i] -> SetBitmap(rysunki[0]);
         plansza7[i] -> SetBitmap(rysunki[0]);
     }
-
     BitmapButton50 -> SetBitmap(rysunki[5]);
     BitmapButton51 -> SetBitmap(rysunki[6]);
     BitmapButton52 -> SetBitmap(rysunki[4]);
@@ -607,26 +605,26 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
         Choice1 -> Show();
     }
     if( RadioButton2 -> GetValue() == true) {
-            object.setgraAI(true);
-            StaticText8 -> SetLabel("Komputerek: Tak");
-            BoxSizer1 -> Fit(this);
+        object.setgraAI(true);
+        StaticText8 -> SetLabel("Komputerek: Tak");
+        BoxSizer1 -> Fit(this);
     }
-    else {
+        else{
             object.setgraAI(false);
             StaticText8 -> SetLabel("Komputerek: Nie");
-    }
-
+        }
     debug_flag = false;
     debugging();
     BoxSizer1 -> Fit(this);
-    if(RadioButton2 -> GetValue() == true)  BitmapButton53 -> SetBitmap(rysunki[1]);
+     BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
+    if(RadioButton2 -> GetValue() == true) gra_z_AI = true;
+    else gra_z_AI = false;
 }
 }
 
 connect_fourDialog::~connect_fourDialog()
 {
-    //(*Destroy(connect_fourDialog)
-    //*)
+
 }
 
 void connect_fourDialog::czyszczenie_rysunkow(){
@@ -651,80 +649,76 @@ void connect_fourDialog::przycisk(int kolumna){ //funkcja przycisk do obsługi g
     object.setLastPickCol(kolumna);
     object.WykonajRuch();
     Choice1 -> Disable();
-
-
-
     switch(kolumna) {
         case 1:
-        if(object.gettokenColor() == 1) {
-        plansza1[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza1[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza1[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza1[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     case 2:
-        if(object.gettokenColor() == 1) {
-        plansza2[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza2[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza2[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza2[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     case 3:
-        if(object.gettokenColor() == 1) {
-        plansza3[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza3[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza3[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza3[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     case 4:
-        if(object.gettokenColor() == 1) {
-        plansza4[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza4[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza4[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza4[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     case 5:
-        if(object.gettokenColor() == 1) {
-        plansza5[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza5[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza5[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza5[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     case 6:
-        if(object.gettokenColor() == 1) {
-        plansza6[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza6[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza6[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza6[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     case 7:
-        if(object.gettokenColor() == 1) {
-        plansza7[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
-        BitmapButton53 -> SetBitmap(rysunki[2]);
-        } else {
-            plansza7[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
-            BitmapButton53 -> SetBitmap(rysunki[1]);
-        }
-        break;
+            if(object.gettokenColor() == 1) {
+            plansza7[cykl[kolumna-1]] -> SetBitmap(rysunki[1]);
+            BitmapButton53 -> SetBitmap(rysunki[2]);
+            } else {
+                plansza7[cykl[kolumna-1]] -> SetBitmap(rysunki[2]);
+                BitmapButton53 -> SetBitmap(rysunki[1]);
+            }
+            break;
     default:
-        break;
+            break;
     }
     cykl[kolumna-1]--;
     licznik_ruchow++;
-    }
-    else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
+    } else wxMessageBox("Ten ruch jest nielegalny.", "Tak nie wolno!");
     if(object.Rezultat() || licznik_ruchow == 42) {
             koniec_gry();
             koniec_meczu(stoi(object.rundy_graczy(0)), stoi(object.rundy_graczy(1)));
@@ -781,11 +775,11 @@ void connect_fourDialog::przycisk_AI(int kolumna){ //funkcja przycisk do obsług
         return;
     }
      //AI
-debugging();
+//debugging();
 
     object.RuchAI();
     kolumna_bota = object.getkolumna_bota()+1;
-    StaticText8 -> SetLabel(to_string(kolumna_bota));
+    StaticText8 -> SetLabel(std::to_string(kolumna_bota));
      if(cykl[kolumna_bota-1]>=0){
     object.setLastPickCol(kolumna_bota);
     switch(kolumna_bota) {
@@ -822,83 +816,58 @@ debugging();
     }
 
     }
-cykl[kolumna_bota-1]--;
+    cykl[kolumna_bota-1]--;
     licznik_ruchow++;
-debugging();
-     if(object.Rezultat() || licznik_ruchow == 42) {
-            koniec_gry();
-            koniec_meczu(stoi(object.rundy_graczy(0)), stoi(object.rundy_graczy(1)));
-            object.ending();
-            BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
-            }
+    //debugging();
+    if(object.Rezultat() || licznik_ruchow == 42) {
+        koniec_gry();
+        koniec_meczu(stoi(object.rundy_graczy(0)), stoi(object.rundy_graczy(1)));
+        object.ending();
+        if(gra_z_AI) BitmapButton53 -> SetBitmap(rysunki[1]);
+            else BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
     }
+}
 
 
 
 
 void connect_fourDialog::OnBitmapButton1Click(wxCommandEvent& event){ //kolumna 1
-   if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(1);
-} else przycisk(1);
+    if(gra_z_AI) przycisk_AI(1);
+        else przycisk(1);
 }
 
 
 void connect_fourDialog::OnBitmapButton2Click(wxCommandEvent& event){ //kolumna 2
-
-    if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(2);
-} else przycisk(2);
+    if(gra_z_AI) przycisk_AI(2);
+        else przycisk(2);
 }
 void connect_fourDialog::OnBitmapButton3Click(wxCommandEvent& event){ //kolumna 3
-
-    if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(3);
-} else przycisk(3);
-    }
+    if(gra_z_AI) przycisk_AI(3);
+        else przycisk(3);
+}
 
 
 void connect_fourDialog::OnBitmapButton4Click(wxCommandEvent& event){ //kolumna 4
-
-    if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(4);
-} else przycisk(4);
+    if(gra_z_AI) przycisk_AI(4);
+        else przycisk(4);
 }
 
 
 void connect_fourDialog::OnBitmapButton5Click(wxCommandEvent& event){ //kolumna 5
-
-    if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(5);
-} else przycisk(5);
+    if(gra_z_AI) przycisk_AI(5);
+        else przycisk(5);
 }
 
 
 void connect_fourDialog::OnBitmapButton6Click(wxCommandEvent& event){ //kolumna 6
-
-    if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(6);
-} else przycisk(6);
+    if(gra_z_AI) przycisk_AI(6);
+        else przycisk(6);
 }
 
 
 void connect_fourDialog::OnBitmapButton49Click(wxCommandEvent& event){ //kolumna 7
-    if(RadioButton2 -> GetValue() == true)
-    {
-
-        przycisk_AI(7);
-} else przycisk(7);
+    if(gra_z_AI) przycisk_AI(7);
+        else przycisk(7);
 }
 
 void connect_fourDialog::OnQuit(wxCommandEvent& event){
@@ -907,34 +876,36 @@ void connect_fourDialog::OnQuit(wxCommandEvent& event){
 
 
 
-void connect_fourDialog::OnBitmapButton51Click(wxCommandEvent& event)//instrukcja
-{
-string instrukcja = "Pierwszy gracz wrzuca swój żeton do wybranej przez niego kolumny. Żeton zajmuje najniższą pozycję. Gracze wrzucają swoje żetony na przemian, aż jeden z nich ułoży cztery żetony w poziomie, pionie lub ukosie. Wygrywa ten gracz, który zrobi to jako pierwszy. Jeżeli natomiast plansza się zapełni, a nie utworzy się żadna czwórka, jest remis.";
+void connect_fourDialog::OnBitmapButton51Click(wxCommandEvent& event){//instrukcja
+std::string instrukcja = "Pierwszy gracz wrzuca swój żeton do wybranej przez niego kolumny. Żeton zajmuje najniższą pozycję. Gracze wrzucają swoje żetony na przemian, aż jeden z nich ułoży cztery żetony w poziomie, pionie lub ukosie. Wygrywa ten gracz, który zrobi to jako pierwszy. Jeżeli natomiast plansza się zapełni, a nie utworzy się żadna czwórka, jest remis.";
 wxMessageBox(s2w(instrukcja),"Instrukcja");
 }
 
 
-void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event) //restart
-{
+void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event){//restart
    czyszczenie_rysunkow();
    object.ending();
    if(RadioButton2 -> GetValue() == true) BitmapButton53 -> SetBitmap(rysunki[1]);
-   else BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
+        else BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
    StaticText3 -> SetLabel("0");
    StaticText5 -> SetLabel("0");
    object.koniec_rund();
-   debugging();
+   if(RadioButton2 -> GetValue() == true) gra_z_AI = true;
+        else gra_z_AI = false;
+   //debugging();
    Choice1 -> Enable();
 }
 
 void connect_fourDialog::koniec_gry(){ //koniec pojedyńczej rozgrywki
     if(licznik_ruchow==42) wxMessageBox(s2w("Wszystkie miejsca na planszy zostały zajęte, nikt nie wygrał."), s2w("Remis!"));
-    else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał"), s2w("Zwycięstwo!"));
+        else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał"), s2w("Zwycięstwo!"));
     if(object.getToken() == 1) StaticText3 -> SetLabel(object.rundy_graczy(0));
         else StaticText5 -> SetLabel(object.rundy_graczy(1));
+    if(RadioButton2 -> GetValue() == true) gra_z_AI = true;
+        else gra_z_AI = false;
     licznik_rund++;
     czyszczenie_rysunkow();
-    update();
+    //update();
     licznik_ruchow = 0;
 }
 
@@ -945,22 +916,23 @@ void connect_fourDialog::koniec_meczu(int gracz_1, int gracz_2){ //koniec gry z 
         object.koniec_rund();
         Choice1 -> Enable();
     } else if((liczba_rund == 3 && (gracz_1==2 || gracz_2==2)) || (liczba_rund==5 && (gracz_1==3 || gracz_2==3)) || (liczba_rund==7 && (gracz_1==4 || gracz_2==4))) {
-            wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał większość rund."), s2w("Koniec gry!"));
-            StaticText3 -> SetLabel("0");
-            StaticText5 -> SetLabel("0");
-            object.koniec_rund();
-            Choice1 -> Enable();
-    }
+                wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał większość rund."), s2w("Koniec gry!"));
+                StaticText3 -> SetLabel("0");
+                StaticText5 -> SetLabel("0");
+                object.koniec_rund();
+                Choice1 -> Enable();
+            }
+    if(RadioButton2 -> GetValue() == true) gra_z_AI = true;
+    else gra_z_AI = false;
 }
 
 
 //POLSKIE ZNAKI W OKNIE
-wxString s2w(string s){
+wxString s2w(std::string s){
     return wxString(s.c_str(), wxConvUTF8);
 }
 
-void connect_fourDialog::OnCheckBox1Click(wxCommandEvent& event) //checkbox od rund
-{
+void connect_fourDialog::OnCheckBox1Click(wxCommandEvent& event){//checkbox od rund
 if(!CheckBox1 -> IsChecked()){
         BitmapButton54 -> Hide();
         BitmapButton55 -> Hide();
@@ -978,7 +950,7 @@ if(!CheckBox1 -> IsChecked()){
         StaticText5 -> Show();
         StaticText6 -> Show();
         BoxSizer1 -> Fit(this);
-    }
+        }
 }
 
 void connect_fourDialog::SetLiczbaRund(int rundy){ //set rundy
@@ -986,76 +958,73 @@ void connect_fourDialog::SetLiczbaRund(int rundy){ //set rundy
 }
 
 
-void connect_fourDialog::OnChoice1Select(wxCommandEvent& event) //wybór liczby rund
-{
+void connect_fourDialog::OnChoice1Select(wxCommandEvent& event){  //wybór liczby rund
     if(Choice1 ->GetSelection()==0) SetLiczbaRund(1);
         else if(Choice1 ->GetSelection()==1) SetLiczbaRund(3);
                 else SetLiczbaRund(5);
 }
 
-void connect_fourDialog::OnRadioButton1Select(wxCommandEvent& event) //2 graczy
-{
-    object.setgraAI(false);
+void connect_fourDialog::OnRadioButton1Select(wxCommandEvent& event){  //2 graczy
+
     StaticText8 -> SetLabel("Komputerek: Nie");
-    debug_flag = false;
-    debugging();
+    //debug_flag = false;
+    //debugging();
 }
 
-void connect_fourDialog::OnRadioButton2Select(wxCommandEvent& event) // z komputerem
-{
-    object.setgraAI(true);
+void connect_fourDialog::OnRadioButton2Select(wxCommandEvent& event){ // z komputerem
+
     StaticText8 -> SetLabel("Komputerek: Tak");
-    debug_flag = true;
-    debugging();
+    //debug_flag = true;
+    //debugging();
 }
 
 void connect_fourDialog::update(){ //refresh tablicy z ruchami
 
-StaticText9 -> SetLabel(to_string(object.DrukujPlansze(0, 0)));
-StaticText10 -> SetLabel(to_string(object.DrukujPlansze(0, 1)));
-StaticText11 -> SetLabel(to_string(object.DrukujPlansze(0, 2)));
-StaticText12 -> SetLabel(to_string(object.DrukujPlansze(0, 3)));
-StaticText13 -> SetLabel(to_string(object.DrukujPlansze(0, 4)));
-StaticText14 -> SetLabel(to_string(object.DrukujPlansze(0, 5)));
-StaticText16 -> SetLabel(to_string(object.DrukujPlansze(1, 0)));
-StaticText17 -> SetLabel(to_string(object.DrukujPlansze(1, 1)));
-StaticText18 -> SetLabel(to_string(object.DrukujPlansze(1, 2)));
-StaticText19 -> SetLabel(to_string(object.DrukujPlansze(1, 3)));
-StaticText20 -> SetLabel(to_string(object.DrukujPlansze(1, 4)));
-StaticText21 -> SetLabel(to_string(object.DrukujPlansze(1, 5)));
-StaticText23 -> SetLabel(to_string(object.DrukujPlansze(2, 0)));
-StaticText24 -> SetLabel(to_string(object.DrukujPlansze(2, 1)));
-StaticText25 -> SetLabel(to_string(object.DrukujPlansze(2, 2)));
-StaticText26 -> SetLabel(to_string(object.DrukujPlansze(2, 3)));
-StaticText27 -> SetLabel(to_string(object.DrukujPlansze(2, 4)));
-StaticText28 -> SetLabel(to_string(object.DrukujPlansze(2, 5)));
-StaticText30 -> SetLabel(to_string(object.DrukujPlansze(3, 0)));
-StaticText31 -> SetLabel(to_string(object.DrukujPlansze(3, 1)));
-StaticText32 -> SetLabel(to_string(object.DrukujPlansze(3, 2)));
-StaticText33 -> SetLabel(to_string(object.DrukujPlansze(3, 3)));
-StaticText34 -> SetLabel(to_string(object.DrukujPlansze(3, 4)));
-StaticText35 -> SetLabel(to_string(object.DrukujPlansze(3, 5)));
-StaticText37 -> SetLabel(to_string(object.DrukujPlansze(4, 0)));
-StaticText38 -> SetLabel(to_string(object.DrukujPlansze(4, 1)));
-StaticText39 -> SetLabel(to_string(object.DrukujPlansze(4, 2)));
-StaticText40 -> SetLabel(to_string(object.DrukujPlansze(4, 3)));
-StaticText41 -> SetLabel(to_string(object.DrukujPlansze(4, 4)));
-StaticText42 -> SetLabel(to_string(object.DrukujPlansze(4, 5)));
-StaticText44 -> SetLabel(to_string(object.DrukujPlansze(5, 0)));
-StaticText45 -> SetLabel(to_string(object.DrukujPlansze(5, 1)));
-StaticText46 -> SetLabel(to_string(object.DrukujPlansze(5, 2)));
-StaticText47 -> SetLabel(to_string(object.DrukujPlansze(5, 3)));
-StaticText48 -> SetLabel(to_string(object.DrukujPlansze(5, 4)));
-StaticText49 -> SetLabel(to_string(object.DrukujPlansze(5, 5)));
-StaticText51 -> SetLabel(to_string(object.DrukujPlansze(6, 0)));
-StaticText52 -> SetLabel(to_string(object.DrukujPlansze(6, 1)));
-StaticText53 -> SetLabel(to_string(object.DrukujPlansze(6, 2)));
-StaticText54 -> SetLabel(to_string(object.DrukujPlansze(6, 3)));
-StaticText15 -> SetLabel(to_string(object.DrukujPlansze(6, 4)));
-StaticText22 -> SetLabel(to_string(object.DrukujPlansze(6, 5)));
+StaticText9 -> SetLabel(std::to_string(object.DrukujPlansze(0, 0)));
+StaticText10 -> SetLabel(std::to_string(object.DrukujPlansze(0, 1)));
+StaticText11 -> SetLabel(std::to_string(object.DrukujPlansze(0, 2)));
+StaticText12 -> SetLabel(std::to_string(object.DrukujPlansze(0, 3)));
+StaticText13 -> SetLabel(std::to_string(object.DrukujPlansze(0, 4)));
+StaticText14 -> SetLabel(std::to_string(object.DrukujPlansze(0, 5)));
+StaticText16 -> SetLabel(std::to_string(object.DrukujPlansze(1, 0)));
+StaticText17 -> SetLabel(std::to_string(object.DrukujPlansze(1, 1)));
+StaticText18 -> SetLabel(std::to_string(object.DrukujPlansze(1, 2)));
+StaticText19 -> SetLabel(std::to_string(object.DrukujPlansze(1, 3)));
+StaticText20 -> SetLabel(std::to_string(object.DrukujPlansze(1, 4)));
+StaticText21 -> SetLabel(std::to_string(object.DrukujPlansze(1, 5)));
+StaticText23 -> SetLabel(std::to_string(object.DrukujPlansze(2, 0)));
+StaticText24 -> SetLabel(std::to_string(object.DrukujPlansze(2, 1)));
+StaticText25 -> SetLabel(std::to_string(object.DrukujPlansze(2, 2)));
+StaticText26 -> SetLabel(std::to_string(object.DrukujPlansze(2, 3)));
+StaticText27 -> SetLabel(std::to_string(object.DrukujPlansze(2, 4)));
+StaticText28 -> SetLabel(std::to_string(object.DrukujPlansze(2, 5)));
+StaticText30 -> SetLabel(std::to_string(object.DrukujPlansze(3, 0)));
+StaticText31 -> SetLabel(std::to_string(object.DrukujPlansze(3, 1)));
+StaticText32 -> SetLabel(std::to_string(object.DrukujPlansze(3, 2)));
+StaticText33 -> SetLabel(std::to_string(object.DrukujPlansze(3, 3)));
+StaticText34 -> SetLabel(std::to_string(object.DrukujPlansze(3, 4)));
+StaticText35 -> SetLabel(std::to_string(object.DrukujPlansze(3, 5)));
+StaticText37 -> SetLabel(std::to_string(object.DrukujPlansze(4, 0)));
+StaticText38 -> SetLabel(std::to_string(object.DrukujPlansze(4, 1)));
+StaticText39 -> SetLabel(std::to_string(object.DrukujPlansze(4, 2)));
+StaticText40 -> SetLabel(std::to_string(object.DrukujPlansze(4, 3)));
+StaticText41 -> SetLabel(std::to_string(object.DrukujPlansze(4, 4)));
+StaticText42 -> SetLabel(std::to_string(object.DrukujPlansze(4, 5)));
+StaticText44 -> SetLabel(std::to_string(object.DrukujPlansze(5, 0)));
+StaticText45 -> SetLabel(std::to_string(object.DrukujPlansze(5, 1)));
+StaticText46 -> SetLabel(std::to_string(object.DrukujPlansze(5, 2)));
+StaticText47 -> SetLabel(std::to_string(object.DrukujPlansze(5, 3)));
+StaticText48 -> SetLabel(std::to_string(object.DrukujPlansze(5, 4)));
+StaticText49 -> SetLabel(std::to_string(object.DrukujPlansze(5, 5)));
+StaticText51 -> SetLabel(std::to_string(object.DrukujPlansze(6, 0)));
+StaticText52 -> SetLabel(std::to_string(object.DrukujPlansze(6, 1)));
+StaticText53 -> SetLabel(std::to_string(object.DrukujPlansze(6, 2)));
+StaticText54 -> SetLabel(std::to_string(object.DrukujPlansze(6, 3)));
+StaticText15 -> SetLabel(std::to_string(object.DrukujPlansze(6, 4)));
+StaticText22 -> SetLabel(std::to_string(object.DrukujPlansze(6, 5)));
 }
 
-void connect_fourDialog::debugging(){//wizualne podejrzenie wewnętrznej tablicy
+void connect_fourDialog::debugging(){//wizualne podejrzenie wewnętrznej tablicy docelowo funkcja nieużywana
     if(debug_flag == true){
 StaticText8 -> Show();
 StaticText9 -> Show();

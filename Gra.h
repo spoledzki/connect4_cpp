@@ -1,6 +1,4 @@
-//
-// Created by Szymon on 20.12.2022.
-//
+
 
 #ifndef CONNECT4_GRA_H
 #define CONNECT4_GRA_H
@@ -42,6 +40,7 @@ public:
     int getwiersz_bota();
     int getkolumna_bota();
     void ruch_bota(int kolumna);
+    std::string Ucinanie(std::string check, std::string reg);
 
 private:
     std::string komunikat;
