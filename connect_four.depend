@@ -4382,7 +4382,7 @@
 1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\checkbox.h
 	"wx/control.h"
 
-1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourapp.cpp
+1674564015 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourapp.cpp
 	"connect_fourApp.h"
 	"connect_fourMain.h"
 	<wx/image.h>
@@ -4432,7 +4432,7 @@
 1667235552 c:\users\serwis\onedrive\dokumenty\labki\cb-biblio\wxwidgets-3.0.5\include\wx\os2\radiobut.h
 	"wx/control.h"
 
-1673446941 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\resource.rc
+1674564015 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\resource.rc
 	"wx/msw/wx.rc"
 
 1674497970 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
