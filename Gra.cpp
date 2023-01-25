@@ -1024,7 +1024,7 @@ void Gra::RuchAI() {
 
     if(MoveLegal){
         ruch_bota(lastPickCol-1);
-        //std::cout << "Losowy ruch" << std::endl;
+        std::cout << "Losowy ruch" << std::endl;
     }
     else{
         RuchAI();
