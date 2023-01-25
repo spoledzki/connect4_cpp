@@ -1,8 +1,7 @@
 Elementy wizualne:
-    1. "postaram się zrobić interfejs taki że wlaź nie rozpozna że to jest wxwidgets xD" NAJWYŻSZY PRIORYTET XD
-    2. usunięcie tego paska okna na górze, dodanie przycisku wyjdź z gry, krótką instrukcję --done
-	  3. Dodanie powiadomienia kogo jest tura --done
-		4. ikonka
+    1. usunięcie tego paska okna na górze, dodanie przycisku wyjdź z gry, krótką instrukcję --done
+	  2. Dodanie powiadomienia kogo jest tura --done
+		3. ikonka
     
 Elementy rozgrywki:
     1. przygotować na dwóch graczy, później ewentualnie dodać możliwość restartu gry z opcją zagrania z komputerem --done
