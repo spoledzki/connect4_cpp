@@ -8,7 +8,7 @@ Elementy rozgrywki:
     2. przygotować sprawdzanie wyniku rozgrywki, to też trzeba jakoś podzielić na etapy --done
     3. dodanie systemu rund --done
 		4. dodanie AI --done
-		5. ulepszenie AI
-		6. funkcjonalne .exe
-		7. dodanie instalki
+		5. ulepszenie AI --done
+		6. funkcjonalne .exe --done
+		7. dodanie instalki --done
 
