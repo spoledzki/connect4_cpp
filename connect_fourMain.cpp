@@ -782,6 +782,15 @@ void connect_fourDialog::przycisk_AI(int kolumna){ //funkcja przycisk do obsług
 
         return;
     }
+
+    if(object.Rezultat() || licznik_ruchow == 42) {
+        koniec_gry();
+        koniec_meczu(stoi(object.rundy_graczy(0)), stoi(object.rundy_graczy(1)));
+        object.ending();
+        if(gra_z_AI) BitmapButton53 -> SetBitmap(rysunki[1]);
+            else BitmapButton53 -> SetBitmap(rysunki[object.getroundCount()]);
+        return;
+    }
      //AI
 //debugging();
 
@@ -906,7 +915,8 @@ void connect_fourDialog::OnBitmapButton52Click(wxCommandEvent& event){//restart
 
 void connect_fourDialog::koniec_gry(){ //koniec pojedyńczej rozgrywki
     if(licznik_ruchow==42) wxMessageBox(s2w("Wszystkie miejsca na planszy zostały zajęte, nikt nie wygrał."), s2w("Remis!"));
-        else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał"), s2w("Zwycięstwo!"));
+    else if(object.getToken()==2 && gra_z_AI) wxMessageBox(s2w("Komputer wygrał."), s2w("Zwycięstwo!"));
+        else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał."), s2w("Zwycięstwo!"));
     if(object.getToken() == 1) StaticText3 -> SetLabel(object.rundy_graczy(0));
         else StaticText5 -> SetLabel(object.rundy_graczy(1));
     if(RadioButton2 -> GetValue() == true) gra_z_AI = true;
@@ -924,7 +934,8 @@ void connect_fourDialog::koniec_meczu(int gracz_1, int gracz_2){ //koniec gry z 
         object.koniec_rund();
         Choice1 -> Enable();
     } else if((liczba_rund == 3 && (gracz_1==2 || gracz_2==2)) || (liczba_rund==5 && (gracz_1==3 || gracz_2==3)) || (liczba_rund==7 && (gracz_1==4 || gracz_2==4))) {
-                wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał większość rund."), s2w("Koniec gry!"));
+                if(gra_z_AI && (object.getToken()==2)) wxMessageBox(s2w("Komputer wygrał większość rund."), s2w("Koniec gry!"));
+                else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał większość rund."), s2w("Koniec gry!"));
                 StaticText3 -> SetLabel("0");
                 StaticText5 -> SetLabel("0");
                 object.koniec_rund();

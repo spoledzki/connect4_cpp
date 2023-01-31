@@ -2,59 +2,13 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="connect_fourMain.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Gra.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="12046" topLine="154" />
+			<Cursor1 position="40548" topLine="153" />
 		</Cursor>
 		<Folding>
-			<Collapse line="43" />
-		</Folding>
-	</File>
-	<File name="resource.rc" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="59" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Gra.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1455" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="connect_fourApp.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="689" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="connect_fourMain.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="49977" topLine="593" />
-		</Cursor>
-		<Folding>
-			<Collapse line="29" />
-			<Collapse line="165" />
-			<Collapse line="637" />
-			<Collapse line="654" />
-			<Collapse line="739" />
-			<Collapse line="886" />
-			<Collapse line="892" />
-			<Collapse line="919" />
-			<Collapse line="963" />
-			<Collapse line="968" />
-			<Collapse line="974" />
-			<Collapse line="981" />
-			<Collapse line="988" />
-			<Collapse line="1034" />
-		</Folding>
-	</File>
-	<File name="Gra.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="35043" topLine="863" />
-		</Cursor>
-		<Folding>
-			<Collapse line="51" />
 			<Collapse line="118" />
 			<Collapse line="147" />
-			<Collapse line="176" />
 			<Collapse line="180" />
 			<Collapse line="185" />
 			<Collapse line="216" />
@@ -63,6 +17,50 @@
 			<Collapse line="255" />
 			<Collapse line="289" />
 			<Collapse line="294" />
+			<Collapse line="300" />
 		</Folding>
+	</File>
+	<File name="Gra.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="558" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="connect_fourMain.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12046" topLine="19" />
+		</Cursor>
+		<Folding>
+			<Collapse line="43" />
+		</Folding>
+	</File>
+	<File name="connect_fourMain.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="59873" topLine="724" />
+		</Cursor>
+		<Folding>
+			<Collapse line="29" />
+			<Collapse line="165" />
+			<Collapse line="637" />
+			<Collapse line="654" />
+			<Collapse line="895" />
+			<Collapse line="901" />
+			<Collapse line="915" />
+			<Collapse line="974" />
+			<Collapse line="979" />
+			<Collapse line="985" />
+			<Collapse line="992" />
+			<Collapse line="999" />
+			<Collapse line="1045" />
+		</Folding>
+	</File>
+	<File name="connect_fourApp.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="689" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="resource.rc" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="59" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

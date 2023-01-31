@@ -174,7 +174,7 @@ bool Gra::CheckRows() {
     return isGameOver;
 }
 
-int Gra::getToken() const {
+int Gra::getToken() const{
     return winningToken;
 }
 
@@ -343,30 +343,38 @@ void Gra::RuchAI() {
             std::cout << check_row <<std::endl;
             if(std::regex_search(check_row, reg1a)){
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row, reg1a_s).length()%4), i-1)) {
-                    ruch_bota(j-3);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_row, reg1a_s).length()%4), i-1)) {
+                        ruch_bota(j-3);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row, reg2a)){
                 WhereIsLegal(j);
-                if(CzyMoznaWstawic(j-(Ucinanie(check_row, reg2a_s).length()%4), i-1)) {
-                    ruch_bota(j);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_row, reg2a_s).length()%4), i-1)) {
+                        ruch_bota(j);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row, reg3a)){
                 WhereIsLegal(j-2);
-                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row, reg3a_s).length()%4), i-1)) {
-                    ruch_bota(j-2);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_row, reg3a_s).length()%4), i-1)) {
+                        ruch_bota(j-2);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row, reg4a)){
                 WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row, reg4a_s).length()%4), i-1)) {
-                    ruch_bota(j-1);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_row, reg4a_s).length()%4), i-1)) {
+                        ruch_bota(j-1);
+                        return;
+                    }
                 }
             }
 
@@ -385,23 +393,31 @@ void Gra::RuchAI() {
             std::cout<<check_col<<std::endl;
             if(std::regex_search(check_col, reg1a)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col, reg2a)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col, reg3a)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col, reg4a)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
 
         }
@@ -420,37 +436,45 @@ void Gra::RuchAI() {
                 std::cout << check_diag1 <<std::endl;
                 if(std::regex_search(check_diag1, reg1a)){
                     WhereIsLegal(j-3);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1, reg1a_s).length()%4), k-4-(Ucinanie(check_diag1, reg1a_s).length()%4))) {
-                        ruch_bota(j-3);
-                        return;
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1, reg1a_s).length()%4), k-4-(Ucinanie(check_diag1, reg1a_s).length()%4))) {
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag1, reg2a)){
                     WhereIsLegal(j);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1, reg2a_s).length()%4), k-1-(Ucinanie(check_diag1, reg2a_s).length()%4))) {
-                        ruch_bota(j);
-                        return;
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag1, reg2a_s).length()%4), k-1-(Ucinanie(check_diag1, reg2a_s).length()%4))) {
+                            ruch_bota(j);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag1, reg3a)){
                     WhereIsLegal(j-2);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1, reg3a_s).length()%4), k-3-(Ucinanie(check_diag1, reg3a_s).length()%4))) {
-                        ruch_bota(j-2);
-                        return;
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1, reg3a_s).length()%4), k-3-(Ucinanie(check_diag1, reg3a_s).length()%4))) {
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag1, reg4a)){
                     WhereIsLegal(j-1);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1, reg4a_s).length()%4), k-2-(Ucinanie(check_diag1, reg4a_s).length()%4))) {
-                        ruch_bota(j-1);
-                        return;
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1, reg4a_s).length()%4), k-2-(Ucinanie(check_diag1, reg4a_s).length()%4))) {
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
                     //check="";
                 }
@@ -470,33 +494,41 @@ void Gra::RuchAI() {
                 std::cout << check_diag2 <<std::endl;
                 if(std::regex_search(check_diag2, reg1a)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag2, reg1a_s).length()%4), k+2+(Ucinanie(check_diag2, reg1a_s).length()%4))) {
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag2, reg1a_s).length()%4), k+2+(Ucinanie(check_diag2, reg1a_s).length()%4))) {
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag2, reg2a)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag2, reg2a_s).length()%4), k-1+(Ucinanie(check_diag2, reg2a_s).length()%4))) {
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag2, reg2a_s).length()%4), k-1+(Ucinanie(check_diag2, reg2a_s).length()%4))) {
+                            ruch_bota(j);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag2, reg3a)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag2, reg3a_s).length()%4), k+1+(Ucinanie(check_diag2, reg3a_s).length()%4))) {
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag2, reg3a_s).length()%4), k+1+(Ucinanie(check_diag2, reg3a_s).length()%4))) {
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag2, reg4a)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag2, reg4a_s).length()%4), k+(Ucinanie(check_diag2, reg4a_s).length()%4))) {
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag2, reg4a_s).length()%4), k+(Ucinanie(check_diag2, reg4a_s).length()%4))) {
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
 
                 }
@@ -516,30 +548,38 @@ void Gra::RuchAI() {
             std::cout << check_row_ai <<std::endl;
             if(std::regex_search(check_row_ai, reg1b)){
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_ai, reg1b_s).length()%4), i-1)) {
-                    ruch_bota(j-3);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_ai, reg1b_s).length()%4), i-1)) {
+                        ruch_bota(j-3);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_ai, reg2b)){
                 WhereIsLegal(j);
-                if(CzyMoznaWstawic(j-(Ucinanie(check_row_ai, reg2b_s).length()%4), i-1)) {
-                    ruch_bota(j);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_row_ai, reg2b_s).length()%4), i-1)) {
+                        ruch_bota(j);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_ai, reg3b)){
                 WhereIsLegal(j-2);
-                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_ai, reg3b_s).length()%4), i-1)) {
-                    ruch_bota(j-2);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_ai, reg3b_s).length()%4), i-1)) {
+                        ruch_bota(j-2);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_ai, reg4b)){
                 WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_ai, reg4b_s).length()%4), i-1)) {
-                    ruch_bota(j-1);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_ai, reg4b_s).length()%4), i-1)) {
+                        ruch_bota(j-1);
+                        return;
+                    }
                 }
             }
 
@@ -558,23 +598,31 @@ void Gra::RuchAI() {
             std::cout<<check_col_ai<<std::endl;
             if(std::regex_search(check_col_ai, reg1b)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_ai, reg2b)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_ai, reg3b)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_ai, reg4b)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
 
         }
@@ -594,39 +642,45 @@ void Gra::RuchAI() {
                 std::cout << check_diag1_ai <<std::endl;
                 if(std::regex_search(check_diag1_ai, reg1b)){
                     WhereIsLegal(j-3);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_ai, reg1b_s).length()%4), k-4-(Ucinanie(check_diag1_ai, reg1b_s).length()%4))) {
-                        ruch_bota(j-3);
-                        return;
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_ai, reg1b_s).length()%4), k-4-(Ucinanie(check_diag1_ai, reg1b_s).length()%4))) {
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag1_ai, reg2b)){
                     WhereIsLegal(j);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_ai, reg2b_s).length()%4), k-1-(Ucinanie(check_diag1_ai, reg2b_s).length()%4))) {
-                        ruch_bota(j);
-                        return;
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_ai, reg2b_s).length()%4), k-1-(Ucinanie(check_diag1_ai, reg2b_s).length()%4))) {
+                            ruch_bota(j);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag1_ai, reg3b)){
                     WhereIsLegal(j-2);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_ai, reg3b_s).length()%4), k-3-(Ucinanie(check_diag1_ai, reg3b_s).length()%4))) {
-                        ruch_bota(j-2);
-                        return;
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_ai, reg3b_s).length()%4), k-3-(Ucinanie(check_diag1_ai, reg3b_s).length()%4))) {
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag1_ai, reg4b)){
                     WhereIsLegal(j-1);
+                    if(MoveLegal){
                     //std::cout << check_diag1 <<std::endl;
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_ai, reg4b_s).length()%4), k-2-(Ucinanie(check_diag1_ai, reg4b_s).length()%4))) {
-                        ruch_bota(j-1);
-                        return;
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_ai, reg4b_s).length()%4), k-2-(Ucinanie(check_diag1_ai, reg4b_s).length()%4))) {
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
-                    //check="";
                 }
             }
             j++;
@@ -644,35 +698,40 @@ void Gra::RuchAI() {
                 std::cout << check_diag2_ai <<std::endl;
                 if(std::regex_search(check_diag2_ai, reg1b)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag2_ai, reg1b_s).length()%4), k+2+(Ucinanie(check_diag2_ai, reg1b_s).length()%4))) {
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag2_ai, reg1b_s).length()%4), k+2+(Ucinanie(check_diag2_ai, reg1b_s).length()%4))) {
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag2_ai, reg2b)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag2_ai, reg2b_s).length()%4), k-1+(Ucinanie(check_diag2_ai, reg2b_s).length()%4))) {
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag2_ai, reg2b_s).length()%4), k-1+(Ucinanie(check_diag2_ai, reg2b_s).length()%4))) {
+                            ruch_bota(j);
+                            return;
+                        }
                     }
 
                 }
                 else if(std::regex_search(check_diag2_ai, reg3b)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag2_ai, reg3b_s).length()%4), k+1+(Ucinanie(check_diag2_ai, reg3b_s).length()%4))) {
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag2_ai, reg3b_s).length()%4), k+1+(Ucinanie(check_diag2_ai, reg3b_s).length()%4))) {
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag2_ai, reg4b)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag2_ai, reg4b_s).length()%4), k+(Ucinanie(check_diag2_ai, reg4b_s).length()%4))) {
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag2_ai, reg4b_s).length()%4), k+(Ucinanie(check_diag2_ai, reg4b_s).length()%4))) {
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
-
                 }
             }
             j++;
@@ -688,81 +747,101 @@ void Gra::RuchAI() {
             std::cout<<check_row_twos<<std::endl;
             if(std::regex_search(check_row_twos, reg5)){
                 WhereIsLegal(j);
-                if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg5_s).length()%4), i-1)){
-                    ruch_bota(j);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg5_s).length()%4), i-1)){
+                        ruch_bota(j);
+                        return;
+                    }
                 }
                 WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg5_s).length()%4), i-1)){
-                    ruch_bota(j-1);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg5_s).length()%4), i-1)){
+                        ruch_bota(j-1);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_twos, reg6)){
                 WhereIsLegal(j-2);
-
-                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg6_s).length()%4), i-1)){
-                    ruch_bota(j-2);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg6_s).length()%4), i-1)){
+                        ruch_bota(j-2);
+                        return;
+                    }
                 }
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg6_s).length()%4), i-1)){
-                    ruch_bota(j-3);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg6_s).length()%4), i-1)){
+                        ruch_bota(j-3);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_twos, reg7)){
 
                 WhereIsLegal(j-2);
-
-                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg7_s).length()%4), i-1)){
-                    ruch_bota(j-2);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg7_s).length()%4), i-1)){
+                        ruch_bota(j-2);
+                        return;
+                    }
                 }
                 WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg7_s).length()%4), i-1)){
-                    ruch_bota(j-1);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg7_s).length()%4), i-1)){
+                        ruch_bota(j-1);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_twos, reg8)){
 
                 WhereIsLegal(j-1);
-
-                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg8_s).length()%4), i-1)){
-                    ruch_bota(j-1);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_twos, reg8_s).length()%4), i-1)){
+                        ruch_bota(j-1);
+                        return;
+                    }
                 }
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg8_s).length()%4), i-1)){
-                    ruch_bota(j-3);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg8_s).length()%4), i-1)){
+                        ruch_bota(j-3);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_twos, reg9)){
 
                 WhereIsLegal(j-2);
-
-                if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg9_s).length()%4), i-1)){
-                    ruch_bota(j-2);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_row_twos, reg9_s).length()%4), i-1)){
+                        ruch_bota(j-2);
+                        return;
+                    }
                 }
                 WhereIsLegal(j);
-                if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg9_s).length()%4), i-1)){
-                    ruch_bota(j);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg9_s).length()%4), i-1)){
+                        ruch_bota(j);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_twos, reg10)){
                 WhereIsLegal(j);
-                if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg10_s).length()%4), i-1)) {
-                    ruch_bota(j);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-(Ucinanie(check_row_twos, reg10_s).length()%4), i-1)) {
+                        ruch_bota(j);
+                        return;
+                    }
                 }
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg10_s).length()%4), i-1)){
-                    ruch_bota(j-3);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_twos, reg10_s).length()%4), i-1)){
+                        ruch_bota(j-3);
+                        return;
+                    }
                 }
             }
 
@@ -778,33 +857,45 @@ void Gra::RuchAI() {
             std::cout<<check_col_twos<<std::endl;
             if(std::regex_search(check_col_twos, reg5)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_twos, reg6)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_twos, reg7)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_twos, reg8)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_twos, reg9)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
             else if(std::regex_search(check_col_twos, reg10)){
                 WhereIsLegal(i);
-                ruch_bota(i);
-                return;
+                if(MoveLegal){
+                    ruch_bota(i);
+                    return;
+                }
             }
 
         }
@@ -821,80 +912,99 @@ void Gra::RuchAI() {
                 std::cout<<check_diag1_twos<<std::endl;
                 if(std::regex_search(check_diag1_twos, reg5)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg5_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg5_s).length()%4))){
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg5_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg5_s).length()%4))){
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg5_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg5_s).length()%4))){
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg5_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg5_s).length()%4))){
+                            ruch_bota(j);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag1_twos, reg6)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg6_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg6_s).length()%4))) {
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg6_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg6_s).length()%4))) {
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg6_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg6_s).length()%4))) {
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg6_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg6_s).length()%4))) {
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag1_twos, reg7)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg7_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg7_s).length()%4))) {
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg7_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg7_s).length()%4))) {
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg7_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg7_s).length()%4))){
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg7_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg7_s).length()%4))){
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag1_twos, reg8)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg8_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg8_s).length()%4))){
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg8_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg8_s).length()%4))){
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg8_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg8_s).length()%4))){
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag1_twos, reg8_s).length()%4), k-2-(Ucinanie(check_diag1_twos, reg8_s).length()%4))){
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag1_twos, reg9)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg9_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg9_s).length()%4))){
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg9_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg9_s).length()%4))){
+                            ruch_bota(j);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg9_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg9_s).length()%4))){
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag1_twos, reg9_s).length()%4), k-3-(Ucinanie(check_diag1_twos, reg9_s).length()%4))){
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
                 }
                 else if(std::regex_search(check_diag1_twos, reg10)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg10_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg10_s).length()%4))){
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag1_twos, reg10_s).length()%4), k-1-(Ucinanie(check_diag1_twos, reg10_s).length()%4))){
+                            ruch_bota(j);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg10_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg10_s).length()%4))){
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag1_twos, reg10_s).length()%4), k-4-(Ucinanie(check_diag1_twos, reg10_s).length()%4))){
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
-
                 }
             }
             j++;
@@ -911,80 +1021,99 @@ void Gra::RuchAI() {
                 std::cout<<check_diag_2twos<<std::endl;
                 if(std::regex_search(check_diag_2twos, reg5)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg5_s).length()%4), k+(Ucinanie(check_diag_2twos, reg5_s).length()%4))){
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg5_s).length()%4), k+(Ucinanie(check_diag_2twos, reg5_s).length()%4))){
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg5_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg5_s).length()%4))){
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg5_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg5_s).length()%4))){
+                            ruch_bota(j);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag_2twos, reg6)){
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg6_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg6_s).length()%4))) {
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg6_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg6_s).length()%4))) {
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg6_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg6_s).length()%4))) {
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg6_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg6_s).length()%4))) {
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag_2twos, reg7)){
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg7_s).length()%4), k+(Ucinanie(check_diag_2twos, reg7_s).length()%4))) {
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg7_s).length()%4), k+(Ucinanie(check_diag_2twos, reg7_s).length()%4))) {
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg7_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg7_s).length()%4))){
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg7_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg7_s).length()%4))){
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag_2twos, reg8)){
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg8_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg8_s).length()%4))){
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg8_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg8_s).length()%4))){
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-1);
-                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg8_s).length()%4), k+(Ucinanie(check_diag_2twos, reg8_s).length()%4))){
-                        ruch_bota(j-1);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-1-(Ucinanie(check_diag_2twos, reg8_s).length()%4), k+(Ucinanie(check_diag_2twos, reg8_s).length()%4))){
+                            ruch_bota(j-1);
+                            return;
+                        }
                     }
-
                 }
                 else if(std::regex_search(check_diag_2twos, reg9)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg9_s).length()%4), k-1+(Ucinanie(check_diag_2twos, reg9_s).length()%4))){
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg9_s).length()%4), k-1+(Ucinanie(check_diag_2twos, reg9_s).length()%4))){
+                            ruch_bota(j);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-2);
-                    if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg9_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg9_s).length()%4))){
-                        ruch_bota(j-2);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-2-(Ucinanie(check_diag_2twos, reg9_s).length()%4), k+1+(Ucinanie(check_diag_2twos, reg9_s).length()%4))){
+                            ruch_bota(j-2);
+                            return;
+                        }
                     }
                 }
                 else if(std::regex_search(check_diag_2twos, reg10)){
                     WhereIsLegal(j);
-                    if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg10_s).length()%4), k-1+(Ucinanie(check_diag_2twos, reg10_s).length()%4))){
-                        ruch_bota(j);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-(Ucinanie(check_diag_2twos, reg10_s).length()%4), k-1+(Ucinanie(check_diag_2twos, reg10_s).length()%4))){
+                            ruch_bota(j);
+                            return;
+                        }
                     }
                     WhereIsLegal(j-3);
-                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg10_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg10_s).length()%4))){
-                        ruch_bota(j-3);
-                        return;
+                    if(MoveLegal){
+                        if(CzyMoznaWstawic(j-3-(Ucinanie(check_diag_2twos, reg10_s).length()%4), k+2+(Ucinanie(check_diag_2twos, reg10_s).length()%4))){
+                            ruch_bota(j-3);
+                            return;
+                        }
                     }
-
                 }
             }
             j++;
@@ -1000,16 +1129,20 @@ void Gra::RuchAI() {
             std::cout << check_row_fives <<std::endl;
             if(std::regex_search(check_row_fives, reg11)){
                 WhereIsLegal(j-1);
-                if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_fives, reg11_s).length()%4), i-1)) {
-                    ruch_bota(j-1);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-1-(Ucinanie(check_row_fives, reg11_s).length()%4), i-1)) {
+                        ruch_bota(j-1);
+                        return;
+                    }
                 }
             }
             else if(std::regex_search(check_row_fives, reg12)){
                 WhereIsLegal(j-3);
-                if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_fives, reg12_s).length()%4), i-1)) {
-                    ruch_bota(j-3);
-                    return;
+                if(MoveLegal){
+                    if(CzyMoznaWstawic(j-3-(Ucinanie(check_row_fives, reg12_s).length()%4), i-1)) {
+                        ruch_bota(j-3);
+                        return;
+                    }
                 }
             }
 
@@ -1018,9 +1151,10 @@ void Gra::RuchAI() {
     }
 
 
-    srand(time(NULL));
-    lastPickCol = rand()%7 + 1;
-    WhereIsLegal(lastPickCol-1);
+        srand(time(NULL));
+        lastPickCol = rand()%7 + 1;
+        WhereIsLegal(lastPickCol-1);
+
 
     if(MoveLegal){
         ruch_bota(lastPickCol-1);

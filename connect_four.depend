@@ -4508,3 +4508,353 @@
 	"wx/control.h"
 	"wx/icon.h"
 
+1675165073 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\connect_fourapp.cpp
+	"connect_fourApp.h"
+	"connect_fourMain.h"
+	<wx/image.h>
+
+1675165073 c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\connect_fourapp.h
+	<wx/app.h>
+
+1675165073 c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\connect_fourmain.h
+	<string>
+	<wx/bmpbuttn.h>
+	<wx/checkbox.h>
+	<wx/choice.h>
+	<wx/dialog.h>
+	<wx/radiobut.h>
+	<wx/sizer.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\choice.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/choice.h"
+	"wx/msw/wince/choicece.h"
+	"wx/msw/choice.h"
+	"wx/motif/choice.h"
+	"wx/gtk/choice.h"
+	"wx/gtk1/choice.h"
+	"wx/osx/choice.h"
+	"wx/cocoa/choice.h"
+	"wx/os2/choice.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\ctrlsub.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/control.h"
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\ctrlsub.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\ctrlsub.h
+	"wx/dynarray.h"
+	"wx/generic/ctrlsub.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\generic\ctrlsub.h
+	"wx/dynarray.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\choice.h
+	"wx/combobox.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\combobox.h
+	"wx/defs.h"
+	"wx/textctrl.h"
+	"wx/ctrlsub.h"
+	"wx/textentry.h"
+	"wx/univ/combobox.h"
+	"wx/msw/combobox.h"
+	"wx/motif/combobox.h"
+	"wx/gtk/combobox.h"
+	"wx/gtk1/combobox.h"
+	"wx/osx/combobox.h"
+	"wx/cocoa/combobox.h"
+	"wx/os2/combobox.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\textctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/textentry.h"
+	"wx/dynarray.h"
+	"wx/gdicmn.h"
+	"wx/ioswrap.h"
+	"wx/x11/textctrl.h"
+	"wx/univ/textctrl.h"
+	"wx/msw/wince/textctrlce.h"
+	"wx/msw/textctrl.h"
+	"wx/motif/textctrl.h"
+	"wx/gtk/textctrl.h"
+	"wx/gtk1/textctrl.h"
+	"wx/osx/textctrl.h"
+	"wx/cocoa/textctrl.h"
+	"wx/os2/textctrl.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\textentry.h
+	"wx/filefn.h"
+	"wx/gdicmn.h"
+	"wx/gtk/textentry.h"
+	"wx/osx/textentry.h"
+	"wx/msw/textentry.h"
+	"wx/motif/textentry.h"
+	"wx/os2/textentry.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\textentry.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\textentry.h
+	"wx/control.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\textentry.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\textentry.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\textentry.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\ioswrap.h
+	"wx/beforestd.h"
+	<iostream.h>
+	<iostream>
+	"wx/afterstd.h"
+	"wx/msw/winundef.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\x11\textctrl.h
+	"wx/univ/textctrl.h"
+	"wx/scrolwin.h"
+	"wx/arrstr.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\textctrl.h
+	"wx/scrolwin.h"
+	"wx/univ/inphand.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\scrolwin.h
+	"wx/panel.h"
+	"wx/gtk/scrolwin.h"
+	"wx/gtk1/scrolwin.h"
+	"wx/generic/scrolwin.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\scrolwin.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\scrolwin.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\generic\scrolwin.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\wince\textctrlce.h
+	"wx/dynarray.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\textctrl.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\textctrl.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\textctrl.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\textctrl.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\textctrl.h
+	"wx/control.h"
+	"wx/textctrl.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\textctrl.h
+	"wx/cocoa/NSTextField.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\textctrl.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\combobox.h
+	"wx/combo.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\combo.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/renderer.h"
+	"wx/bitmap.h"
+	"wx/textentry.h"
+	"wx/msw/combo.h"
+	"wx/generic/combo.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\renderer.h
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/bitmap.h"
+	"wx/string.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\combo.h
+	"wx/timer.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\generic\combo.h
+	"wx/dcbuffer.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\dcbuffer.h
+	"wx/dcmemory.h"
+	"wx/dcclient.h"
+	"wx/window.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\dcmemory.h
+	"wx/dc.h"
+	"wx/bitmap.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\combobox.h
+	"wx/choice.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\combobox.h
+	"wx/defs.h"
+	"wx/object.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\combobox.h
+	"wx/containr.h"
+	"wx/choice.h"
+	"wx/textctrl.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\combobox.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+	"wx/textctrl.h"
+	"wx/dynarray.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\wince\choicece.h
+	"wx/defs.h"
+	"wx/dynarray.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\choice.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\choice.h
+	"wx/clntdata.h"
+	"wx/dynarray.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\choice.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\choice.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\choice.h
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/arrstr.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\choice.h
+	"wx/cocoa/NSMenu.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\nsmenu.h
+	"wx/hashmap.h"
+	"wx/cocoa/ObjcAssociate.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\choice.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\radiobut.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/radiobut.h"
+	"wx/msw/radiobut.h"
+	"wx/motif/radiobut.h"
+	"wx/gtk/radiobut.h"
+	"wx/gtk1/radiobut.h"
+	"wx/osx/radiobut.h"
+	"wx/cocoa/radiobut.h"
+	"wx/os2/radiobut.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\radiobut.h
+	"wx/checkbox.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\radiobut.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\radiobut.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\radiobut.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\radiobut.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\radiobut.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\radiobut.h
+	"wx/cocoa/NSButton.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\radiobut.h
+	"wx/control.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\statbmp.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/univ/statbmp.h"
+	"wx/msw/statbmp.h"
+	"wx/motif/statbmp.h"
+	"wx/gtk/statbmp.h"
+	"wx/gtk1/statbmp.h"
+	"wx/osx/statbmp.h"
+	"wx/cocoa/statbmp.h"
+	"wx/os2/statbmp.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\univ\statbmp.h
+	"wx/bitmap.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\msw\statbmp.h
+	"wx/control.h"
+	"wx/icon.h"
+	"wx/bitmap.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\motif\statbmp.h
+	"wx/motif/bmpmotif.h"
+	"wx/icon.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk\statbmp.h
+	"wx/icon.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\gtk1\statbmp.h
+	"wx/icon.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\statbmp.h
+	"wx/osx/carbon/statbmp.h"
+	"wx/generic/statbmpg.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\osx\carbon\statbmp.h
+	"wx/icon.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\generic\statbmpg.h
+	"wx/statbmp.h"
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\cocoa\statbmp.h
+
+1587557368 c:\wxwidgets-3.0.5-static64-mono\wxwidgets-3.0.5\include\wx\os2\statbmp.h
+	"wx/control.h"
+	"wx/icon.h"
+
+1675165073 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\connect_fourmain.cpp
+	"connect_fourMain.h"
+	<wx/msgdlg.h>
+	"Gra.h"
+	<ctime>
+	<cstring>
+	<windows.h>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1675172333 c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\gra.h
+	<iostream>
+	<regex>
+	<string>
+	<sstream>
+
+1675172333 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\gra.cpp
+	"Gra.h"
+	<iostream>
+	<sstream>
+	<cstring>
+	<ctime>
+	<cstdlib>
+
+1675165073 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\resource.rc
+	"wx/msw/wx.rc"
+
