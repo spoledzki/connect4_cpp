@@ -4435,16 +4435,14 @@
 1674564015 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\resource.rc
 	"wx/msw/wx.rc"
 
-1674497970 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
+1674726640 source:c:\users\serwis\onedrive\dokumenty\labki\projekt_z_programowania\projekt\connect_4_ai\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
 	<ctime>
 	<cstring>
 	<windows.h>
-	<wx/bitmap.h>
 	<wx/font.h>
-	<wx/image.h>
 	<wx/intl.h>
 	<wx/string.h>
 

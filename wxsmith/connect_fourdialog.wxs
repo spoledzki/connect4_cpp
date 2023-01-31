@@ -12,8 +12,7 @@
 					<cols>1</cols>
 					<object class="sizeritem">
 						<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
-							<bitmap>C:\Users\serwis\OneDrive\Dokumenty\labki\projekt_z_programowania\projekt\connect_4_AI\pictures\connect_4.png</bitmap>
-							<size>340,70</size>
+							<size>296,61</size>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>

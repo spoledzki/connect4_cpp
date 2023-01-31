@@ -17,9 +17,7 @@
 #define _(s) wxString::FromUTF8(s)
 
 //(*InternalHeaders(connect_fourDialog)
-#include <wx/bitmap.h>
 #include <wx/font.h>
-#include <wx/image.h>
 #include <wx/intl.h>
 #include <wx/string.h>
 //*)
@@ -207,7 +205,7 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     SetBackgroundColour(wxColour(50,170,180));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     FlexGridSizer13 = new wxFlexGridSizer(0, 1, 0, 0);
-    StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\serwis\\OneDrive\\Dokumenty\\labki\\projekt_z_programowania\\projekt\\connect_4_AI\\pictures\\connect_4.png")).Rescale(wxSize(340,70).GetWidth(),wxSize(340,70).GetHeight())), wxDefaultPosition, wxSize(340,70), 0, _T("ID_STATICBITMAP1"));
+    StaticBitmap1 = new wxStaticBitmap(this, ID_STATICBITMAP1, wxNullBitmap, wxDefaultPosition, wxSize(296,61), 0, _T("ID_STATICBITMAP1"));
     FlexGridSizer13->Add(StaticBitmap1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     FlexGridSizer17 = new wxFlexGridSizer(0, 2, 0, 0);
     FlexGridSizer4 = new wxFlexGridSizer(0, 1, 0, 0);
@@ -629,6 +627,7 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
     if(RadioButton2 -> GetValue() == true) gra_z_AI = true;
     else gra_z_AI = false;
 }
+StaticBitmap1 -> SetBitmap(rysunki[10]);
 }
 
 connect_fourDialog::~connect_fourDialog()

@@ -31,18 +31,21 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wall" />
 			<Add option="-pipe" />
 			<Add option="-mthreads" />
 			<Add option="-D__GNUWIN32__" />
 			<Add option="-D__WXMSW__" />
 			<Add option="-DwxUSE_UNICODE" />
-			<Add option="-Wall" />
 			<Add directory="$(#wx)/include" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="$(#wx)/include" />
 		</ResourceCompiler>
 		<Linker>
+			<Add option="-static-libstdc++" />
+			<Add option="-static-libgcc" />
+			<Add option="-static" />
 			<Add option="-mthreads" />
 			<Add library="libkernel32.a" />
 			<Add library="libuser32.a" />
