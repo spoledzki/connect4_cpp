@@ -1,7 +1,7 @@
 /***************************************************************
  * Name:      connect_fourApp.h
- * Purpose:   Defines Application Class
- * Author:     ()
+ * Purpose:   Definiuje klasę aplikacji
+ * Author:    Igor Nowiński, Szymon Olędzki, Tymoteusz Romanowicz
  * Created:   2022-12-14
  * Copyright:  ()
  * License:

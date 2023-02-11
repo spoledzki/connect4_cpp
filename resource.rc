@@ -1,4 +1,4 @@
-aaaa ICON pictures/ikona.ico
+aaaa ICON bin/Release/pictures/ikona.ico
 
 #include "wx/msw/wx.rc"
 

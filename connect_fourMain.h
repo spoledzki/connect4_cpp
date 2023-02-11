@@ -1,6 +1,6 @@
 /***************************************************************
  * Name:      connect_fourMain.h
- * Purpose:   Deklaracje funkcji projektu connect_four.cpp
+ * Purpose:   Deklaracje funkcji klasy connect_fourDialog
  * Author:    Igor Nowiński, Szymon Olędzki, Tymoteusz Romanowicz
  * Created:   2022-12-14
  * Copyright:  ()
