@@ -93,7 +93,7 @@ void Gra::WykonajRuch() {
 
 }
 
-void Gra::WykonajRuch_z_AI() {
+void Gra::WykonajRuch_z_Komputerem() {
     //std::cout << "Tura gracza "<< tokenColor <<" - ktora kolumne wybierasz?";
     //std::cin >> lastPickCol;
     WhereIsLegal(lastPickCol-1);
@@ -103,7 +103,7 @@ void Gra::WykonajRuch_z_AI() {
     }
     else{
         //std::cout << "Ten ruch jest nielegalny, wybierz inna kolumne." << std::endl;
-        WykonajRuch_z_AI();
+        WykonajRuch_z_Komputerem();
     }
 
 }
@@ -298,9 +298,7 @@ for(int i=0;i<2;i++){
 }
 
 
-void Gra::RuchAI() {
-    //srand(time(NULL));
-    //lastPickCol = rand()%7 + 1;
+void Gra::Ruch_Komputera() {
     int j;
     std::string check_col, check_row, check_diag1, check_diag2;
     std::string check_col_twos, check_row_twos, check_diag1_twos, check_diag_2twos;
@@ -1151,9 +1149,9 @@ void Gra::RuchAI() {
     }
 
 
-        srand(time(NULL));
-        lastPickCol = rand()%7 + 1;
-        WhereIsLegal(lastPickCol-1);
+    srand(time(NULL));
+    lastPickCol = rand()%7 + 1;
+    WhereIsLegal(lastPickCol-1);
 
 
     if(MoveLegal){
@@ -1161,7 +1159,7 @@ void Gra::RuchAI() {
         std::cout << "Losowy ruch" << std::endl;
     }
     else{
-        RuchAI();
+        Ruch_Komputera();
     }
 
 

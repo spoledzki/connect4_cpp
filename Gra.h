@@ -19,7 +19,7 @@ public:
     bool Rezultat();
     int DrukujPlansze(int numer_kolumny, int numer_wiersza);
     void WykonajRuch();
-    void WykonajRuch_z_AI();
+    void WykonajRuch_z_Komputerem();
     bool CheckCols();
     bool CheckRows();
     bool CheckDiags();
@@ -33,7 +33,7 @@ public:
     std::string rundy_graczy(int numer_gracza);
     void ending();
     std::string getKomunikat();
-    void RuchAI();
+    void Ruch_Komputera();
     bool CzyMoznaWstawic(int i, int j);
     void setgraAI(bool wartosc);
     void setwiersz_kolumna_bota(int kolumna);

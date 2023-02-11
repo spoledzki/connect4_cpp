@@ -166,6 +166,8 @@ BEGIN_EVENT_TABLE(connect_fourDialog,wxDialog)
     //(*EventTable(connect_fourDialog)
     //*)
 END_EVENT_TABLE()
+
+
 Gra object;
 connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
 {
@@ -740,7 +742,7 @@ void connect_fourDialog::przycisk(int kolumna){ //funkcja przycisk do obsługi g
 void connect_fourDialog::przycisk_AI(int kolumna){ //funkcja przycisk do obsługi gry z komputerem
     if(cykl[kolumna-1]>=0){
     object.setLastPickCol(kolumna);
-    object.WykonajRuch_z_AI();
+    object.WykonajRuch_z_Komputerem();
     Choice1 -> Disable();
     //ruchy gracza
     switch(kolumna) {
@@ -794,7 +796,7 @@ void connect_fourDialog::przycisk_AI(int kolumna){ //funkcja przycisk do obsług
      //AI
 //debugging();
 
-    object.RuchAI();
+    object.Ruch_Komputera();
     kolumna_bota = object.getkolumna_bota()+1;
     StaticText8 -> SetLabel(std::to_string(kolumna_bota));
      if(cykl[kolumna_bota-1]>=0){
@@ -933,7 +935,9 @@ void connect_fourDialog::koniec_meczu(int gracz_1, int gracz_2){ //koniec gry z 
         StaticText5 -> SetLabel("0");
         object.koniec_rund();
         Choice1 -> Enable();
-    } else if((liczba_rund == 3 && (gracz_1==2 || gracz_2==2)) || (liczba_rund==5 && (gracz_1==3 || gracz_2==3)) || (liczba_rund==7 && (gracz_1==4 || gracz_2==4))) {
+    } else if((liczba_rund == 3 && (gracz_1==2 || gracz_2==2)) ||
+              (liczba_rund == 5 && (gracz_1==3 || gracz_2==3)) ||
+              (liczba_rund == 7 && (gracz_1==4 || gracz_2==4))) {
                 if(gra_z_AI && (object.getToken()==2)) wxMessageBox(s2w("Komputer wygrał większość rund."), s2w("Koniec gry!"));
                 else wxMessageBox(s2w("Gracz "+std::to_string(object.getToken())+" wygrał większość rund."), s2w("Koniec gry!"));
                 StaticText3 -> SetLabel("0");

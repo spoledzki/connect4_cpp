@@ -4830,7 +4830,7 @@
 	"wx/control.h"
 	"wx/icon.h"
 
-1675165073 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\connect_fourmain.cpp
+1676121346 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
@@ -4841,13 +4841,13 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1675172333 c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\gra.h
+1676121303 c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\gra.h
 	<iostream>
 	<regex>
 	<string>
 	<sstream>
 
-1675172333 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\gra.cpp
+1676121335 source:c:\users\arito\downloads\connect4_cpp-implementacja-cb_ostatniamoze\connect4_cpp-implementacja-cb\gra.cpp
 	"Gra.h"
 	<iostream>
 	<sstream>
