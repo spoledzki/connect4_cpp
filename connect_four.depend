@@ -4877,7 +4877,7 @@
 	<wx/statbmp.h>
 	<wx/stattext.h>
 
-1676128469 source:d:\labki\projekt_z_programowania\projekt\connect4_cpp-implementacja-cb\connect_fourmain.cpp
+1676129747 source:d:\labki\projekt_z_programowania\projekt\connect4_cpp-implementacja-cb\connect_fourmain.cpp
 	"connect_fourMain.h"
 	<wx/msgdlg.h>
 	"Gra.h"
@@ -4902,7 +4902,7 @@
 	<ctime>
 	<cstdlib>
 
-1676128522 source:d:\labki\projekt_z_programowania\projekt\connect4_cpp-implementacja-cb\resource.rc
+1676129747 source:d:\labki\projekt_z_programowania\projekt\connect4_cpp-implementacja-cb\resource.rc
 	"wx/msw/wx.rc"
 
 1587557368 d:\labki\cb-biblio\wxwidgets-3.0.5\include\wx\app.h

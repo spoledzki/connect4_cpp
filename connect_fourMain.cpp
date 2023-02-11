@@ -525,17 +525,17 @@ connect_fourDialog::connect_fourDialog(wxWindow* parent,wxWindowID id)
 
     //ustawienie tablic i rysunków
     {
-    rysunki[0]=wxBitmap(wxImage("bin/Release/pictures/blank.bmp"));
-    rysunki[1]=wxBitmap(wxImage("bin/Release/pictures/circle.bmp"));
-    rysunki[2]=wxBitmap(wxImage("bin/Release/pictures/circle2.bmp"));
-    rysunki[3]=wxBitmap(wxImage("bin/Release/pictures/blank_button.bmp"));
-    rysunki[4]=wxBitmap(wxImage("bin/Release/pictures/restart.bmp"));
-    rysunki[5]=wxBitmap(wxImage("bin/Release/pictures/exit.bmp"));
-    rysunki[6]=wxBitmap(wxImage("bin/Release/pictures/tutorial.bmp"));
-    rysunki[7]=wxBitmap(wxImage("bin/Release/pictures/tutorial.jpg"));
-    rysunki[8]=wxBitmap(wxImage("bin/Release/pictures/restart.jpg"));
-    rysunki[9]=wxBitmap(wxImage("bin/Release/pictures/quit.jpg"));
-    rysunki[10]=wxBitmap(wxImage("bin/Release/pictures/connect_4.png"));
+    rysunki[0]=wxBitmap(wxImage("pictures/blank.bmp"));
+    rysunki[1]=wxBitmap(wxImage("pictures/circle.bmp"));
+    rysunki[2]=wxBitmap(wxImage("pictures/circle2.bmp"));
+    rysunki[3]=wxBitmap(wxImage("pictures/blank_button.bmp"));
+    rysunki[4]=wxBitmap(wxImage("pictures/restart.bmp"));
+    rysunki[5]=wxBitmap(wxImage("pictures/exit.bmp"));
+    rysunki[6]=wxBitmap(wxImage("pictures/tutorial.bmp"));
+    rysunki[7]=wxBitmap(wxImage("pictures/tutorial.jpg"));
+    rysunki[8]=wxBitmap(wxImage("pictures/restart.jpg"));
+    rysunki[9]=wxBitmap(wxImage("pictures/quit.jpg"));
+    rysunki[10]=wxBitmap(wxImage("pictures/connect_4.png"));
     #define pw(nr, i) plansza1[i]=BitmapButton ##nr
     pw(7,0); pw(8,1); pw(9,2); pw(10,3); pw(11,4); pw(12,5);
     #undef pw
